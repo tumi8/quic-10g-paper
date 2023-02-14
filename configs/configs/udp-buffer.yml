@@ -1,0 +1,31 @@
+testbed: testbed/testbed_goracle-gard.json
+server: lsquic,quiche,quiche-udp
+client: lsquic,quiche,quiche-udp
+test: goodput
+repetitions: 5
+filesize: 8192
+implementation_directory: ./out
+use_client_timestamps: True
+continue_on_error: True
+only_same_implementation: True
+client_prerunscript:
+  - pre-post-scripts/start-pidstat.sh
+  - pre-post-scripts/run-ethtool.sh
+  - pre-post-scripts/run-netstat.sh
+  - pre-post-scripts/set-rcvbuf.sh
+client_postrunscript:
+  - pre-post-scripts/stop-pidstat.sh
+  - pre-post-scripts/run-ethtool.sh
+  - pre-post-scripts/run-netstat.sh
+  - pre-post-scripts/set-buffers-default.sh
+server_prerunscript:
+  - pre-post-scripts/start-pidstat.sh
+  - pre-post-scripts/run-ethtool.sh
+  - pre-post-scripts/run-netstat.sh
+  - pre-post-scripts/set-rcvbuf.sh
+server_postrunscript:
+  - pre-post-scripts/stop-pidstat.sh
+  - pre-post-scripts/run-ethtool.sh
+  - pre-post-scripts/run-netstat.sh
+  - pre-post-scripts/set-buffers-default.sh
+

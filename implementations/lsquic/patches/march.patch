@@ -1,0 +1,14 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index db5c8a2..3283aec 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -71,7 +71,8 @@ IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
+ ELSE()
+     SET(MY_CMAKE_FLAGS "${MY_CMAKE_FLAGS} -O3 -g0")
+     # Comment out the following line to compile out debug messages:
+-    #SET(MY_CMAKE_FLAGS "${MY_CMAKE_FLAGS} -DLSQUIC_LOWEST_LOG_LEVEL=LSQ_LOG_INFO")
++    SET(MY_CMAKE_FLAGS "${MY_CMAKE_FLAGS} -DLSQUIC_LOWEST_LOG_LEVEL=LSQ_LOG_INFO")
++    SET(MY_CMAKE_FLAGS "${MY_CMAKE_FLAGS} -march=native")
+ ENDIF()
+ 
+ IF (LSQUIC_DEVEL)

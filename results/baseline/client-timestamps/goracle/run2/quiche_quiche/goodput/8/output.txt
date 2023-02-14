@@ -1,0 +1,72 @@
+2023-01-24 07:53:16,818 
+2023-01-24 07:53:16,819 Copy /tmp/logs_server_dabsgsut to goracle:/tmp
+2023-01-24 07:53:17,088 Copy /tmp/www_zopmlzxx to goracle:/tmp
+2023-01-24 07:53:17,358 Copy /tmp/certs_vyx3zvax to goracle:/tmp
+2023-01-24 07:53:17,629 Copy /tmp/logs_sim_s8at2o4v to gard:/tmp
+2023-01-24 07:53:17,899 Copy /tmp/logs_client_rumkfjd1 to gard:/tmp
+2023-01-24 07:53:18,119 Copy /tmp/download_pjqdicvv to gard:/tmp
+2023-01-24 07:53:18,389 ssh goracle 'touch /tmp/www_zopmlzxx/yxukaoohcm && shred -n 1 -s 8589934592 /tmp/www_zopmlzxx/yxukaoohcm'
+2023-01-24 07:53:22,319 Generated random file: /tmp/www_zopmlzxx/yxukaoohcm of size: 8589934592
+2023-01-24 07:53:22,320 Requests: https://server:4433/yxukaoohcm
+2023-01-24 07:53:22,320 Checking if file /tmp/quiche-server/bin/activate exists
+2023-01-24 07:53:22,332 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:53:22,386 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-24 07:53:22,399 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:53:23,401 http://172.16.128.1:5000 "GET /commands/await/2023-01-24_07-53-22_382278_unknown HTTP/1.1" 200 473
+2023-01-24 07:53:23,403 Checking if file /tmp/quiche-client/bin/activate exists
+2023-01-24 07:53:23,415 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:53:23,465 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-24 07:53:23,476 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:53:24,438 http://172.16.128.1:5000 "GET /commands/await/2023-01-24_07-53-23_461104_unknown HTTP/1.1" 200 470
+2023-01-24 07:53:24,441 Setting variables:
+{'implementation': 'quiche', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_dabsgsut', 'www_dir': '/tmp/www_zopmlzxx/', 'certs_dir': '/tmp/certs_vyx3zvax/', 'role': 'server'}
+on the host goracle
+2023-01-24 07:53:24,453 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:53:24,550 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-24 07:53:24,552 Setting variables:
+{'implementation': 'quiche', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_rumkfjd1', 'sim_log_dir': '/tmp/logs_sim_s8at2o4v', 'download_dir': '/tmp/download_pjqdicvv/', 'role': 'client'}
+on the host gard
+2023-01-24 07:53:24,564 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:53:24,620 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-24 07:53:24,622 Starting server:
+ ssh goracle 'cd quiche; . /tmp/quiche-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_dabsgsut/keys.log  LOGS=/tmp/logs_server_dabsgsut TESTCASE=goodput WWW=/tmp/www_zopmlzxx/ CERTS=/tmp/certs_vyx3zvax/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-01-24 07:53:26,628 Starting client:
+ ssh gard 'cd quiche; . /tmp/quiche-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_rumkfjd1/keys.log  LOGS=/tmp/logs_client_rumkfjd1 TESTCASE=goodput DOWNLOADS=/tmp/download_pjqdicvv/ REQUESTS="https://server:4433/yxukaoohcm" ./run-client.sh'
+
+2023-01-24 07:53:52,783 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-01-24 07:53:52,795 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:53:52,899 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-24 07:53:52,902 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-01-24 07:53:52,914 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:53:52,973 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-24 07:53:52,975 Client stderr
+2023-01-24 07:53:52,975 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
+Value not found
+Value not found
+Value not found
+Value not found
+
+2023-01-24 07:53:53,000 Server stderr
+2023-01-24 07:53:53,000 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
+Value not found
+Value not found
+Value not found
+Value not found
+
+2023-01-24 07:53:53,000 Copy goracle:/tmp/logs_server_dabsgsut to /tmp
+2023-01-24 07:53:53,220 Copy goracle:/tmp/certs_vyx3zvax to /tmp
+2023-01-24 07:53:53,390 Copy gard:/tmp/logs_sim_s8at2o4v to /tmp
+2023-01-24 07:53:53,559 Copy gard:/tmp/logs_client_rumkfjd1 to /tmp
+2023-01-24 07:53:53,729 Interop duration: 0:00:25.148058
+2023-01-24 07:53:53,730 Client  duration: 0:00:24.204258
+2023-01-24 07:53:53,730 Difference: 3.75%
+2023-01-24 07:53:53,730 ssh gard 'stat -c %s /tmp/download_pjqdicvv/yxukaoohcm'
+2023-01-24 07:53:53,881 ssh goracle 'stat -c %s /tmp/www_zopmlzxx/yxukaoohcm'
+2023-01-24 07:53:54,078 Check of downloaded files succeeded.
+2023-01-24 07:53:54,079 Transferring 8589.93 MB took 24.204 s. Goodput: 2839.148 Mbps
+2023-01-24 07:53:54,079 ✓ Test successful

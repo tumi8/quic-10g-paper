@@ -1,0 +1,31 @@
+testbed: testbed/testbed_goracle-gard.json
+server: aioquic,quic-go,mvfst,quiche-goracle,lsquic-goracle,picoquic
+client: aioquic,quic-go,mvfst,quiche-goracle,lsquic-goracle,picoquic
+test: goodput
+repetitions: 20
+filesize: 8192
+implementation_directory: ./out
+use_client_timestamps: True
+continue_on_error: True
+client_implementaion_params:
+  - rmem_value: 6815744
+server_implementaion_params:
+  - rmem_value: 6815744
+client_prerunscript:
+  - pre-post-scripts/run-ethtool.sh
+  - pre-post-scripts/run-netstat.sh
+  - pre-post-scripts/set-rcvbuf.sh
+client_postrunscript:
+  - pre-post-scripts/run-ethtool.sh
+  - pre-post-scripts/run-netstat.sh
+  - pre-post-scripts/set-buffers-default.sh
+server_prerunscript:
+  - pre-post-scripts/run-ethtool.sh
+  - pre-post-scripts/run-netstat.sh
+  - pre-post-scripts/set-rcvbuf.sh
+server_postrunscript:
+  - pre-post-scripts/run-ethtool.sh
+  - pre-post-scripts/run-netstat.sh
+  - pre-post-scripts/set-buffers-default.sh
+
+

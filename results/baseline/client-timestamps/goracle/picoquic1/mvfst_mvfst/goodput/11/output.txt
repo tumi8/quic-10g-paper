@@ -1,0 +1,72 @@
+2023-02-03 08:19:50,871 
+2023-02-03 08:19:50,872 Copy /tmp/logs_server_186qn_3g to goracle:/tmp
+2023-02-03 08:19:51,141 Copy /tmp/www_vu_p0t31 to goracle:/tmp
+2023-02-03 08:19:51,411 Copy /tmp/certs_r0nzntlp to goracle:/tmp
+2023-02-03 08:19:51,681 Copy /tmp/logs_sim_3b42i8o7 to gard:/tmp
+2023-02-03 08:19:51,901 Copy /tmp/logs_client_efaubqky to gard:/tmp
+2023-02-03 08:19:52,121 Copy /tmp/download_rlofi7ea to gard:/tmp
+2023-02-03 08:19:52,340 ssh goracle 'touch /tmp/www_vu_p0t31/pemjqnnptc && shred -n 1 -s 8589934592 /tmp/www_vu_p0t31/pemjqnnptc'
+2023-02-03 08:19:56,199 Generated random file: /tmp/www_vu_p0t31/pemjqnnptc of size: 8589934592
+2023-02-03 08:19:56,200 Requests: https://server:4433/pemjqnnptc
+2023-02-03 08:19:56,200 Checking if file /tmp/mvfst-server/bin/activate exists
+2023-02-03 08:19:56,211 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 08:19:56,263 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-02-03 08:19:56,277 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 08:19:57,671 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_08-19-56_259475_unknown HTTP/1.1" 200 472
+2023-02-03 08:19:57,672 Checking if file /tmp/mvfst-client/bin/activate exists
+2023-02-03 08:19:57,682 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 08:19:57,738 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-02-03 08:19:57,749 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 08:19:59,237 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_08-19-57_734137_unknown HTTP/1.1" 200 469
+2023-02-03 08:19:59,239 Setting variables:
+{'implementation': 'mvfst', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_186qn_3g', 'www_dir': '/tmp/www_vu_p0t31/', 'certs_dir': '/tmp/certs_r0nzntlp/', 'role': 'server'}
+on the host goracle
+2023-02-03 08:19:59,249 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 08:19:59,304 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 08:19:59,305 Setting variables:
+{'implementation': 'mvfst', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_efaubqky', 'sim_log_dir': '/tmp/logs_sim_3b42i8o7', 'download_dir': '/tmp/download_rlofi7ea/', 'role': 'client'}
+on the host gard
+2023-02-03 08:19:59,318 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 08:19:59,374 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 08:19:59,375 Starting server:
+ ssh goracle 'cd mvfst; . /tmp/mvfst-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_186qn_3g/keys.log  LOGS=/tmp/logs_server_186qn_3g TESTCASE=goodput WWW=/tmp/www_vu_p0t31/ CERTS=/tmp/certs_r0nzntlp/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-02-03 08:20:01,382 Starting client:
+ ssh gard 'cd mvfst; . /tmp/mvfst-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_efaubqky/keys.log  LOGS=/tmp/logs_client_efaubqky TESTCASE=goodput DOWNLOADS=/tmp/download_rlofi7ea/ REQUESTS="https://server:4433/pemjqnnptc" ./run-client.sh'
+
+2023-02-03 08:20:52,375 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-02-03 08:20:52,386 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 08:20:52,484 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 08:20:52,486 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-02-03 08:20:52,500 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 08:20:52,554 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 08:20:52,556 Client stdout
+2023-02-03 08:20:52,557 requesting files '/pemjqnnptc'
+
+2023-02-03 08:20:52,557 Client stderr
+2023-02-03 08:20:52,557 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
+I0203 08:20:01.620834 56994 HQClient.cpp:61] HQClient connecting to 10.0.0.2:4433
+I0203 08:20:01.626359 56994 CurlClient.cpp:187] Sending request for /pemjqnnptc
+I0203 08:20:51.363961 56994 CurlClient.cpp:273] Got EOM for /pemjqnnptc. Txn Time= 49737 ms
+
+2023-02-03 08:20:52,757 Server stderr
+2023-02-03 08:20:52,757 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
+I0203 08:19:59.639072 70305 QuicServer.cpp:224] NOT using CCP
+I0203 08:19:59.660230 70305 HQServer.cpp:263] HQ server started at: 10.0.0.2:4433
+
+2023-02-03 08:20:52,757 Copy goracle:/tmp/logs_server_186qn_3g to /tmp
+2023-02-03 08:20:52,977 Copy goracle:/tmp/certs_r0nzntlp to /tmp
+2023-02-03 08:20:53,197 Copy gard:/tmp/logs_sim_3b42i8o7 to /tmp
+2023-02-03 08:20:53,416 Copy gard:/tmp/logs_client_efaubqky to /tmp
+2023-02-03 08:20:53,636 Interop duration: 0:00:49.986307
+2023-02-03 08:20:53,637 Client  duration: 0:00:49.777031
+2023-02-03 08:20:53,637 Difference: 0.42%
+2023-02-03 08:20:53,637 ssh gard 'stat -c %s /tmp/download_rlofi7ea/pemjqnnptc'
+2023-02-03 08:20:53,789 ssh goracle 'stat -c %s /tmp/www_vu_p0t31/pemjqnnptc'
+2023-02-03 08:20:53,982 Check of downloaded files succeeded.
+2023-02-03 08:20:53,983 Transferring 8589.93 MB took 49.777 s. Goodput: 1380.546 Mbps
+2023-02-03 08:20:53,983 ✓ Test successful

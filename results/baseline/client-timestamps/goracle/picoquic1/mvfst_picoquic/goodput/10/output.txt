@@ -1,0 +1,139 @@
+2023-02-03 07:25:42,779 
+2023-02-03 07:25:42,780 Copy /tmp/logs_server_tmz6d5sn to goracle:/tmp
+2023-02-03 07:25:42,998 Copy /tmp/www_ij3q345t to goracle:/tmp
+2023-02-03 07:25:43,269 Copy /tmp/certs_dwm85zas to goracle:/tmp
+2023-02-03 07:25:43,539 Copy /tmp/logs_sim_a4cb1mvv to gard:/tmp
+2023-02-03 07:25:43,809 Copy /tmp/logs_client_0d0y8x1e to gard:/tmp
+2023-02-03 07:25:44,079 Copy /tmp/download_avysdzkn to gard:/tmp
+2023-02-03 07:25:44,349 ssh goracle 'touch /tmp/www_ij3q345t/jvlseapguz && shred -n 1 -s 8589934592 /tmp/www_ij3q345t/jvlseapguz'
+2023-02-03 07:25:48,258 Generated random file: /tmp/www_ij3q345t/jvlseapguz of size: 8589934592
+2023-02-03 07:25:48,259 Requests: https://server:4433/jvlseapguz
+2023-02-03 07:25:48,259 Checking if file /tmp/mvfst-server/bin/activate exists
+2023-02-03 07:25:48,270 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 07:25:48,327 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-02-03 07:25:48,339 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 07:25:49,765 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_07-25-48_322892_unknown HTTP/1.1" 200 472
+2023-02-03 07:25:49,766 Checking if file /tmp/picoquic-client/bin/activate exists
+2023-02-03 07:25:49,775 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 07:25:49,837 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-02-03 07:25:49,850 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 07:25:51,296 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_07-25-49_832177_unknown HTTP/1.1" 200 472
+2023-02-03 07:25:51,298 Setting variables:
+{'implementation': 'mvfst', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_tmz6d5sn', 'www_dir': '/tmp/www_ij3q345t/', 'certs_dir': '/tmp/certs_dwm85zas/', 'role': 'server'}
+on the host goracle
+2023-02-03 07:25:51,311 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 07:25:51,412 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 07:25:51,414 Setting variables:
+{'implementation': 'picoquic', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_0d0y8x1e', 'sim_log_dir': '/tmp/logs_sim_a4cb1mvv', 'download_dir': '/tmp/download_avysdzkn/', 'role': 'client'}
+on the host gard
+2023-02-03 07:25:51,427 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 07:25:51,484 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 07:25:51,486 Starting server:
+ ssh goracle 'cd mvfst; . /tmp/mvfst-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_tmz6d5sn/keys.log  LOGS=/tmp/logs_server_tmz6d5sn TESTCASE=goodput WWW=/tmp/www_ij3q345t/ CERTS=/tmp/certs_dwm85zas/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-02-03 07:25:53,491 Starting client:
+ ssh gard 'cd picoquic; . /tmp/picoquic-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_0d0y8x1e/keys.log  LOGS=/tmp/logs_client_0d0y8x1e TESTCASE=goodput DOWNLOADS=/tmp/download_avysdzkn/ REQUESTS="https://server:4433/jvlseapguz" ./run-client.sh'
+
+2023-02-03 07:27:04,516 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-02-03 07:27:04,531 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 07:27:04,663 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 07:27:04,665 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-02-03 07:27:04,677 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 07:27:04,732 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 07:27:04,733 Client stdout
+2023-02-03 07:27:04,733 Starting Picoquic (v1.1.0.1) connection to server = server, port = 4433
+Set ALPN to h3 based on stored ticket
+Set version to 0x00000001 based on stored ticket
+Testing scenario: <jvlseapguz>
+Max stream id bidir remote before start = 0 (0)
+Starting client connection. Version = 1, I-CID: a3f1d28ef7c84b51
+Max stream id bidir remote after start = 396 (100)
+Max stream id bidir remote after 0rtt = 396 (100)
+Opening stream 0 to GET /jvlseapguz
+Waiting for packets.
+Client port (AF=2): 40322.
+Negotiated ALPN: h3
+Almost ready!
+
+Connection established. Version = 1, I-CID: a3f1d28ef7c84b51, verified: 1
+Stream 0 ended after 0 bytes
+All done, Closing the connection.
+Received a request to close the connection.
+The connection is closed!
+Out of 1 zero RTT packets, 0 were acked by the server.
+Quic Bit was NOT greased by the client.
+Quic Bit was NOT greased by the server.
+ECN was not received.
+ECN was not acknowledged.
+Received 8589934783 bytes in 69.795104 seconds, 984.588808 Mbps.
+max_data_local: 20639121408
+max_stream_data_local: 41278242816
+max_data_remote: 10485760
+max_stream_data_remote: 262144
+ack_delay_remote: 1000 ... 1000
+max_ack_gap_remote: 2
+ack_delay_local: 25000 ... 25000
+max_ack_gap_local: 2
+max_mtu_sent: 1252
+max_mtu_received: 1232
+Received ticket from server (h3):
+ticket time = 1675405553716, kx = 1d, suite = 1301, 220 ticket, 32 secret.
+lifetime = 3600, age_add = 545814f8, 0 nonce, 199 ticket, 8 extensions.
+ticket extensions: 42(ED: ffffffff),
+Client exit with code = 0
+
+2023-02-03 07:27:04,733 Client stderr
+2023-02-03 07:27:04,733 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
++ [[ goodput != \g\o\o\d\p\u\t ]]
+++ echo https://server:4433/jvlseapguz
+++ grep ://
+++ sed '-es,^\(.*://\).*,\1,g'
++ PROTO=https://
+++ echo server:4433/jvlseapguz
++ URL=server:4433/jvlseapguz
+++ echo server:4433/jvlseapguz
+++ grep @
+++ cut -d@ -f1
++ USER=
+++ echo server:4433/jvlseapguz
+++ cut -d/ -f1
++ HOSTPORT=server:4433
+++ echo server:4433
+++ sed -e 's,:.*,,g'
++ HOST=server
+++ echo server:4433
+++ sed -e 's,^.*:,:,g' -e 's,.*:\([0-9]*\).*,\1,g' -e 's,[^0-9],,g'
++ PORT=4433
+++ echo server:4433/jvlseapguz
+++ grep /
+++ cut -d/ -f2-
++ FILES=jvlseapguz
+++ date +%s%N
++ start=1675405553707700870
++ ./picoquicdemo -n server -o /tmp/download_avysdzkn/ server 4433 jvlseapguz
++ ret=0
+++ date +%s%N
++ end=1675405623507495191
++ echo '{"start":' 1675405553707700870, '"end":' '1675405623507495191}'
+
+2023-02-03 07:27:04,954 Server stderr
+2023-02-03 07:27:04,954 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
+I0203 07:25:51.746856 55244 QuicServer.cpp:224] NOT using CCP
+I0203 07:25:51.775676 55244 HQServer.cpp:263] HQ server started at: 10.0.0.2:4433
+
+2023-02-03 07:27:04,955 Copy goracle:/tmp/logs_server_tmz6d5sn to /tmp
+2023-02-03 07:27:05,174 Copy goracle:/tmp/certs_dwm85zas to /tmp
+2023-02-03 07:27:05,394 Copy gard:/tmp/logs_sim_a4cb1mvv to /tmp
+2023-02-03 07:27:05,614 Copy gard:/tmp/logs_client_0d0y8x1e to /tmp
+2023-02-03 07:27:05,834 Interop duration: 0:01:10.017912
+2023-02-03 07:27:05,835 Client  duration: 0:01:09.799794
+2023-02-03 07:27:05,835 Difference: 0.31%
+2023-02-03 07:27:05,835 ssh gard 'stat -c %s /tmp/download_avysdzkn/jvlseapguz'
+2023-02-03 07:27:06,030 ssh goracle 'stat -c %s /tmp/www_ij3q345t/jvlseapguz'
+2023-02-03 07:27:06,230 Check of downloaded files succeeded.
+2023-02-03 07:27:06,231 Transferring 8589.93 MB took 69.800 s. Goodput: 984.523 Mbps
+2023-02-03 07:27:06,231 ✓ Test successful

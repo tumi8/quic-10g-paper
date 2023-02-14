@@ -1,0 +1,144 @@
+2023-01-26 13:44:30,313 
+2023-01-26 13:44:30,314 Copy /tmp/logs_server_4kye5d6s to goracle:/tmp
+2023-01-26 13:44:30,584 Copy /tmp/www_jvsuptv8 to goracle:/tmp
+2023-01-26 13:44:30,804 Copy /tmp/certs_qhpv38qv to goracle:/tmp
+2023-01-26 13:44:31,072 Copy /tmp/logs_sim_5uk5xx2b to gard:/tmp
+2023-01-26 13:44:31,341 Copy /tmp/logs_client_2lgf4uee to gard:/tmp
+2023-01-26 13:44:31,611 Copy /tmp/download_qmu2f9fp to gard:/tmp
+2023-01-26 13:44:31,831 ssh goracle 'touch /tmp/www_jvsuptv8/cofjgxjglx && shred -n 1 -s 8589934592 /tmp/www_jvsuptv8/cofjgxjglx'
+2023-01-26 13:44:35,773 Generated random file: /tmp/www_jvsuptv8/cofjgxjglx of size: 8589934592
+2023-01-26 13:44:35,774 Requests: https://server:4433/cofjgxjglx
+2023-01-26 13:44:35,774 Checking if file /tmp/tls1.3-server/bin/activate exists
+2023-01-26 13:44:35,787 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:35,841 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-26 13:44:35,853 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:36,996 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-44-35_837157_unknown HTTP/1.1" 200 473
+2023-01-26 13:44:36,998 Checking if file /tmp/tls1.3-client/bin/activate exists
+2023-01-26 13:44:37,009 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:37,062 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-26 13:44:37,075 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:38,197 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-44-37_058163_unknown HTTP/1.1" 200 470
+2023-01-26 13:44:38,199 Setting variables:
+{'implementation': 'tls1.3', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_4kye5d6s', 'www_dir': '/tmp/www_jvsuptv8/', 'certs_dir': '/tmp/certs_qhpv38qv/', 'role': 'server', 'rmem_value': 6815744, 'cipher': 'TLS_AES_128_GCM_SHA256'}
+on the host goracle
+2023-01-26 13:44:38,211 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:38,310 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-26 13:44:38,312 Setting variables:
+{'implementation': 'tls1.3', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_2lgf4uee', 'sim_log_dir': '/tmp/logs_sim_5uk5xx2b', 'download_dir': '/tmp/download_qmu2f9fp/', 'role': 'client', 'rmem_value': 6815744, 'cipher': 'TLS_AES_128_GCM_SHA256'}
+on the host gard
+2023-01-26 13:44:38,323 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:38,374 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-26 13:44:38,376 Run pre-post-scripts/start-pidstat.sh on goracle
+2023-01-26 13:44:38,388 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:38,436 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-26 13:44:38,448 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:40,337 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-44-38_432500_unknown HTTP/1.1" 200 2063
+2023-01-26 13:44:40,339 Run pre-post-scripts/run-ethtool.sh on goracle
+2023-01-26 13:44:40,347 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:40,398 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-26 13:44:40,409 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:42,126 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-44-40_393525_unknown HTTP/1.1" 200 1239
+2023-01-26 13:44:42,127 Run pre-post-scripts/run-netstat.sh on goracle
+2023-01-26 13:44:42,138 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:42,188 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-26 13:44:42,201 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:43,688 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-44-42_184109_unknown HTTP/1.1" 200 1527
+2023-01-26 13:44:43,689 Run pre-post-scripts/set-rcvbuf.sh on goracle
+2023-01-26 13:44:43,699 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:43,749 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-26 13:44:43,760 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:45,086 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-44-43_744459_unknown HTTP/1.1" 200 618
+2023-01-26 13:44:45,088 Run pre-post-scripts/start-pidstat.sh on gard
+2023-01-26 13:44:45,098 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:45,148 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-26 13:44:45,159 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:47,030 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-44-45_143755_unknown HTTP/1.1" 200 2060
+2023-01-26 13:44:47,032 Run pre-post-scripts/run-ethtool.sh on gard
+2023-01-26 13:44:47,044 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:47,095 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-26 13:44:47,107 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:48,777 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-44-47_090523_unknown HTTP/1.1" 200 1236
+2023-01-26 13:44:48,779 Run pre-post-scripts/run-netstat.sh on gard
+2023-01-26 13:44:48,791 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:48,843 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-26 13:44:48,856 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:50,356 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-44-48_838887_unknown HTTP/1.1" 200 1524
+2023-01-26 13:44:50,358 Run pre-post-scripts/set-rcvbuf.sh on gard
+2023-01-26 13:44:50,369 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:50,416 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-26 13:44:50,430 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:44:51,754 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-44-50_412621_unknown HTTP/1.1" 200 615
+2023-01-26 13:44:51,756 Starting server:
+ ssh goracle 'cd tls1.3; . /tmp/tls1.3-server/bin/activate; OPENSSL_ia32cap="~0x200000200000000" SSLKEYLOGFILE=/tmp/logs_server_4kye5d6s/keys.log  LOGS=/tmp/logs_server_4kye5d6s TESTCASE=goodput WWW=/tmp/www_jvsuptv8/ CERTS=/tmp/certs_qhpv38qv/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-01-26 13:44:53,763 Starting client:
+ ssh gard 'cd tls1.3; . /tmp/tls1.3-client/bin/activate; OPENSSL_ia32cap="~0x200000200000000" SSLKEYLOGFILE=/tmp/logs_client_2lgf4uee/keys.log  LOGS=/tmp/logs_client_2lgf4uee TESTCASE=goodput DOWNLOADS=/tmp/download_qmu2f9fp/ REQUESTS="https://server:4433/cofjgxjglx" ./run-client.sh'
+
+2023-01-26 13:45:37,403 Run pre-post-scripts/stop-pidstat.sh on goracle
+2023-01-26 13:45:37,416 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:37,470 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-26 13:45:37,480 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:38,627 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-45-37_464782_unknown HTTP/1.1" 200 528
+2023-01-26 13:45:38,629 Run pre-post-scripts/run-ethtool.sh on goracle
+2023-01-26 13:45:38,640 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:38,691 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-26 13:45:38,703 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:40,375 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-45-38_687412_unknown HTTP/1.1" 200 1239
+2023-01-26 13:45:40,377 Run pre-post-scripts/run-netstat.sh on goracle
+2023-01-26 13:45:40,387 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:40,434 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-26 13:45:40,447 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:41,977 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-45-40_430860_unknown HTTP/1.1" 200 1527
+2023-01-26 13:45:41,979 Run pre-post-scripts/set-buffers-default.sh on goracle
+2023-01-26 13:45:41,989 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:42,040 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-26 13:45:42,051 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:43,179 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-45-42_036012_unknown HTTP/1.1" 200 706
+2023-01-26 13:45:43,181 Run pre-post-scripts/stop-pidstat.sh on gard
+2023-01-26 13:45:43,191 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:43,243 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-26 13:45:43,257 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:44,392 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-45-43_239320_unknown HTTP/1.1" 200 525
+2023-01-26 13:45:44,394 Run pre-post-scripts/run-ethtool.sh on gard
+2023-01-26 13:45:44,405 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:44,454 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-26 13:45:44,465 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:46,170 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-45-44_449720_unknown HTTP/1.1" 200 1236
+2023-01-26 13:45:46,173 Run pre-post-scripts/run-netstat.sh on gard
+2023-01-26 13:45:46,182 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:46,231 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-26 13:45:46,244 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:47,721 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-45-46_227440_unknown HTTP/1.1" 200 1524
+2023-01-26 13:45:47,722 Run pre-post-scripts/set-buffers-default.sh on gard
+2023-01-26 13:45:47,735 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:47,780 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-26 13:45:47,793 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:48,912 http://172.16.128.1:5000 "GET /commands/await/2023-01-26_13-45-47_776036_unknown HTTP/1.1" 200 703
+2023-01-26 13:45:49,920 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': '', 'rmem_value': '', 'cipher': ''}
+on the host goracle
+2023-01-26 13:45:49,932 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:50,021 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-26 13:45:50,023 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': '', 'rmem_value': '', 'cipher': ''}
+on the host gard
+2023-01-26 13:45:50,036 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-26 13:45:50,089 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-26 13:45:50,091 Client stderr
+2023-01-26 13:45:50,091 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
+
+2023-01-26 13:45:50,217 Server stderr
+2023-01-26 13:45:50,217 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
+
+2023-01-26 13:45:50,218 Copy goracle:/tmp/logs_server_4kye5d6s to /tmp
+2023-01-26 13:45:50,437 Copy goracle:/tmp/certs_qhpv38qv to /tmp
+2023-01-26 13:45:50,657 Copy gard:/tmp/logs_sim_5uk5xx2b to /tmp
+2023-01-26 13:45:50,926 Copy gard:/tmp/logs_client_2lgf4uee to /tmp
+2023-01-26 13:45:51,146 Interop duration: 0:00:43.639232
+2023-01-26 13:45:51,147 Client  duration: 0:00:43.482415
+2023-01-26 13:45:51,147 Difference: 0.36%
+2023-01-26 13:45:51,147 ssh gard 'stat -c %s /tmp/download_qmu2f9fp/cofjgxjglx'
+2023-01-26 13:45:51,390 ssh goracle 'stat -c %s /tmp/www_jvsuptv8/cofjgxjglx'
+2023-01-26 13:45:51,630 Check of downloaded files succeeded.
+2023-01-26 13:45:51,631 Transferring 8589.93 MB took 43.482 s. Goodput: 1580.397 Mbps
+2023-01-26 13:45:51,631 ✓ Test successful

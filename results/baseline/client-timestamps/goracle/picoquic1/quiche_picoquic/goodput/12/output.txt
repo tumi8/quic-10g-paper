@@ -1,0 +1,139 @@
+2023-02-03 09:19:56,594 
+2023-02-03 09:19:56,595 Copy /tmp/logs_server_wentvj5s to goracle:/tmp
+2023-02-03 09:19:56,814 Copy /tmp/www_7jslgbir to goracle:/tmp
+2023-02-03 09:19:57,083 Copy /tmp/certs_b9ypqio3 to goracle:/tmp
+2023-02-03 09:19:57,303 Copy /tmp/logs_sim_evr81gsm to gard:/tmp
+2023-02-03 09:19:57,573 Copy /tmp/logs_client_vehr45fu to gard:/tmp
+2023-02-03 09:19:57,843 Copy /tmp/download_hvikjw69 to gard:/tmp
+2023-02-03 09:19:58,113 ssh goracle 'touch /tmp/www_7jslgbir/rlbxoatjic && shred -n 1 -s 8589934592 /tmp/www_7jslgbir/rlbxoatjic'
+2023-02-03 09:20:01,968 Generated random file: /tmp/www_7jslgbir/rlbxoatjic of size: 8589934592
+2023-02-03 09:20:01,969 Requests: https://server:4433/rlbxoatjic
+2023-02-03 09:20:01,969 Checking if file /tmp/quiche-server/bin/activate exists
+2023-02-03 09:20:01,982 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 09:20:02,039 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-02-03 09:20:02,051 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 09:20:03,485 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_09-20-02_034144_unknown HTTP/1.1" 200 473
+2023-02-03 09:20:03,487 Checking if file /tmp/picoquic-client/bin/activate exists
+2023-02-03 09:20:03,497 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 09:20:03,553 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-02-03 09:20:03,564 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 09:20:05,007 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_09-20-03_549250_unknown HTTP/1.1" 200 472
+2023-02-03 09:20:05,009 Setting variables:
+{'implementation': 'quiche', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_wentvj5s', 'www_dir': '/tmp/www_7jslgbir/', 'certs_dir': '/tmp/certs_b9ypqio3/', 'role': 'server'}
+on the host goracle
+2023-02-03 09:20:05,020 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 09:20:05,119 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 09:20:05,121 Setting variables:
+{'implementation': 'picoquic', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_vehr45fu', 'sim_log_dir': '/tmp/logs_sim_evr81gsm', 'download_dir': '/tmp/download_hvikjw69/', 'role': 'client'}
+on the host gard
+2023-02-03 09:20:05,134 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 09:20:05,190 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 09:20:05,192 Starting server:
+ ssh goracle 'cd quiche; . /tmp/quiche-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_wentvj5s/keys.log  LOGS=/tmp/logs_server_wentvj5s TESTCASE=goodput WWW=/tmp/www_7jslgbir/ CERTS=/tmp/certs_b9ypqio3/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-02-03 09:20:07,198 Starting client:
+ ssh gard 'cd picoquic; . /tmp/picoquic-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_vehr45fu/keys.log  LOGS=/tmp/logs_client_vehr45fu TESTCASE=goodput DOWNLOADS=/tmp/download_hvikjw69/ REQUESTS="https://server:4433/rlbxoatjic" ./run-client.sh'
+
+2023-02-03 09:20:40,199 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-02-03 09:20:40,212 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 09:20:40,356 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 09:20:40,358 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-02-03 09:20:40,371 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 09:20:40,426 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 09:20:40,428 Client stdout
+2023-02-03 09:20:40,428 Starting Picoquic (v1.1.0.1) connection to server = server, port = 4433
+Set ALPN to h3 based on stored ticket
+Set version to 0x00000001 based on stored ticket
+Testing scenario: <rlbxoatjic>
+Max stream id bidir remote before start = 0 (0)
+Starting client connection. Version = 1, I-CID: 85aac12e5c46b6a9
+Max stream id bidir remote after start = 396 (100)
+Waiting for packets.
+Client port (AF=2): 43092.
+Negotiated ALPN: h3
+Almost ready!
+
+Connection established. Version = 1, I-CID: a01a515b4c5c5ca6, verified: 1
+Opening stream 0 to GET /rlbxoatjic
+Stream 0 ended after 0 bytes
+All done, Closing the connection.
+Received a request to close the connection.
+Quic Bit was NOT greased by the client.
+Quic Bit was NOT greased by the server.
+ECN was not received.
+ECN was not acknowledged.
+Received 8590427388 bytes in 31.770316 seconds, 2163.133005 Mbps.
+max_data_local: 20639121408
+max_stream_data_local: 41278242816
+max_data_remote: 10000000
+max_stream_data_remote: 1000000
+ack_delay_remote: 1000 ... 10000
+max_ack_gap_remote: 2
+ack_delay_local: 25000 ... 25000
+max_ack_gap_local: 2
+max_mtu_sent: 1252
+max_mtu_received: 1350
+Received ticket from server (h3):
+ticket time = 1675412408860, kx = 17, suite = 1301, 194 ticket, 32 secret.
+lifetime = 172800, age_add = 4cc9249, 1 nonce, 176 ticket, 4 extensions.
+ticket extensions: 
+4 extra bytes at the end of the extensions
+Client exit with code = 0
+
+2023-02-03 09:20:40,428 Client stderr
+2023-02-03 09:20:40,428 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
++ [[ goodput != \g\o\o\d\p\u\t ]]
+++ echo https://server:4433/rlbxoatjic
+++ grep ://
+++ sed '-es,^\(.*://\).*,\1,g'
++ PROTO=https://
+++ echo server:4433/rlbxoatjic
++ URL=server:4433/rlbxoatjic
+++ echo server:4433/rlbxoatjic
+++ grep @
+++ cut -d@ -f1
++ USER=
+++ echo server:4433/rlbxoatjic
+++ cut -d/ -f1
++ HOSTPORT=server:4433
+++ echo server:4433
+++ sed -e 's,:.*,,g'
++ HOST=server
+++ echo server:4433
+++ sed -e 's,^.*:,:,g' -e 's,.*:\([0-9]*\).*,\1,g' -e 's,[^0-9],,g'
++ PORT=4433
+++ echo server:4433/rlbxoatjic
+++ grep /
+++ cut -d/ -f2-
++ FILES=rlbxoatjic
+++ date +%s%N
++ start=1675412407415962070
++ ./picoquicdemo -n server -o /tmp/download_hvikjw69/ server 4433 rlbxoatjic
++ ret=0
+++ date +%s%N
++ end=1675412439190900684
++ echo '{"start":' 1675412407415962070, '"end":' '1675412439190900684}'
+
+2023-02-03 09:20:40,500 Server stderr
+2023-02-03 09:20:40,500 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
+Value not found
+Value not found
+Value not found
+Value not found
+
+2023-02-03 09:20:40,500 Copy goracle:/tmp/logs_server_wentvj5s to /tmp
+2023-02-03 09:20:40,719 Copy goracle:/tmp/certs_b9ypqio3 to /tmp
+2023-02-03 09:20:40,939 Copy gard:/tmp/logs_sim_evr81gsm to /tmp
+2023-02-03 09:20:41,159 Copy gard:/tmp/logs_client_vehr45fu to /tmp
+2023-02-03 09:20:41,378 Interop duration: 0:00:31.994528
+2023-02-03 09:20:41,379 Client  duration: 0:00:31.774939
+2023-02-03 09:20:41,379 Difference: 0.69%
+2023-02-03 09:20:41,379 ssh gard 'stat -c %s /tmp/download_hvikjw69/rlbxoatjic'
+2023-02-03 09:20:41,574 ssh goracle 'stat -c %s /tmp/www_7jslgbir/rlbxoatjic'
+2023-02-03 09:20:41,770 Check of downloaded files succeeded.
+2023-02-03 09:20:41,771 Transferring 8589.93 MB took 31.775 s. Goodput: 2162.694 Mbps
+2023-02-03 09:20:41,771 ✓ Test successful

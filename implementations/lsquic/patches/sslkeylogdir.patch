@@ -1,0 +1,13 @@
+diff --git a/bin/prog.c b/bin/prog.c
+index b779f92..7ccceff 100644
+--- a/bin/prog.c
++++ b/bin/prog.c
+@@ -668,7 +668,7 @@ keylog_open_file (const SSL *ssl)
+     conn = lsquic_ssl_to_conn(ssl);
+     cid = lsquic_conn_id(conn);
+     lsquic_hexstr(cid->idbuf, cid->len, id_str, sizeof(id_str));
+-    sz = snprintf(path, sizeof(path), "%s/%s.keys", s_keylog_dir, id_str);
++    sz = snprintf(path, sizeof(path), "%s/keys.log", s_keylog_dir);
+     if ((size_t) sz >= sizeof(path))
+     {
+         LSQ_WARN("%s: file too long", __func__);

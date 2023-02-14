@@ -1,0 +1,76 @@
+2023-01-24 06:48:50,067 
+2023-01-24 06:48:50,068 Copy /tmp/logs_server_1spdt8e5 to goracle:/tmp
+2023-01-24 06:48:50,288 Copy /tmp/www_9l0decwl to goracle:/tmp
+2023-01-24 06:48:50,508 Copy /tmp/certs_e8ag30_o to goracle:/tmp
+2023-01-24 06:48:50,779 Copy /tmp/logs_sim_gnakkwva to gard:/tmp
+2023-01-24 06:48:51,049 Copy /tmp/logs_client_7i2ee7zw to gard:/tmp
+2023-01-24 06:48:51,319 Copy /tmp/download_5dvaneoo to gard:/tmp
+2023-01-24 06:48:51,588 Limit filesize for goodput to 209715200
+2023-01-24 06:48:51,589 ssh goracle 'touch /tmp/www_9l0decwl/drxehsxlgz && shred -n 1 -s 209715200 /tmp/www_9l0decwl/drxehsxlgz'
+2023-01-24 06:48:51,908 Generated random file: /tmp/www_9l0decwl/drxehsxlgz of size: 209715200
+2023-01-24 06:48:51,909 Requests: https://server:4433/drxehsxlgz
+2023-01-24 06:48:51,909 Checking if file /tmp/quiche-server/bin/activate exists
+2023-01-24 06:48:51,922 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 06:48:51,979 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-24 06:48:51,992 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 06:48:52,993 http://172.16.128.1:5000 "GET /commands/await/2023-01-24_06-48-51_973934_unknown HTTP/1.1" 200 473
+2023-01-24 06:48:52,995 Checking if file /tmp/aioquic-client/bin/activate exists
+2023-01-24 06:48:53,006 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 06:48:53,064 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-24 06:48:53,077 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 06:48:54,131 http://172.16.128.1:5000 "GET /commands/await/2023-01-24_06-48-53_059398_unknown HTTP/1.1" 200 471
+2023-01-24 06:48:54,132 Setting variables:
+{'implementation': 'quiche', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_1spdt8e5', 'www_dir': '/tmp/www_9l0decwl/', 'certs_dir': '/tmp/certs_e8ag30_o/', 'role': 'server'}
+on the host goracle
+2023-01-24 06:48:54,143 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 06:48:54,253 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-24 06:48:54,254 Setting variables:
+{'implementation': 'aioquic', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_7i2ee7zw', 'sim_log_dir': '/tmp/logs_sim_gnakkwva', 'download_dir': '/tmp/download_5dvaneoo/', 'role': 'client'}
+on the host gard
+2023-01-24 06:48:54,268 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 06:48:54,323 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-24 06:48:54,325 Starting server:
+ ssh goracle 'cd quiche; . /tmp/quiche-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_1spdt8e5/keys.log  LOGS=/tmp/logs_server_1spdt8e5 TESTCASE=goodput WWW=/tmp/www_9l0decwl/ CERTS=/tmp/certs_e8ag30_o/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-01-24 06:48:56,331 Starting client:
+ ssh gard 'cd aioquic; . /tmp/aioquic-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_7i2ee7zw/keys.log  LOGS=/tmp/logs_client_7i2ee7zw TESTCASE=goodput DOWNLOADS=/tmp/download_5dvaneoo/ REQUESTS="https://server:4433/drxehsxlgz" ./run-client.sh'
+
+2023-01-24 06:49:08,322 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-01-24 06:49:08,333 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 06:49:08,441 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-24 06:49:08,443 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-01-24 06:49:08,454 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 06:49:08,510 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-24 06:49:08,512 Client stdout
+2023-01-24 06:49:08,512 client exited with code 0
+
+2023-01-24 06:49:08,513 Client stderr
+2023-01-24 06:49:08,513 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
+2023-01-24 06:48:56,620 INFO quic [f4adf2e2824bc8ba] Retrying with token (18 bytes)
+2023-01-24 06:48:56,626 INFO quic [f4adf2e2824bc8ba] ALPN negotiated protocol h3
+2023-01-24 06:49:07,037 INFO http Received Code 200 on request
+2023-01-24 06:49:07,201 INFO quic [f4adf2e2824bc8ba] Connection close sent (code 0x0, reason )
+
+2023-01-24 06:49:08,513 Server stderr
+2023-01-24 06:49:08,513 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
+Value not found
+Value not found
+Value not found
+Value not found
+
+2023-01-24 06:49:08,514 Copy goracle:/tmp/logs_server_1spdt8e5 to /tmp
+2023-01-24 06:49:08,733 Copy goracle:/tmp/certs_e8ag30_o to /tmp
+2023-01-24 06:49:08,953 Copy gard:/tmp/logs_sim_gnakkwva to /tmp
+2023-01-24 06:49:09,123 Copy gard:/tmp/logs_client_7i2ee7zw to /tmp
+2023-01-24 06:49:09,343 Interop duration: 0:00:10.983085
+2023-01-24 06:49:09,343 Client  duration: 0:00:10.826832
+2023-01-24 06:49:09,343 Difference: 1.42%
+2023-01-24 06:49:09,344 ssh gard 'stat -c %s /tmp/download_5dvaneoo/drxehsxlgz'
+2023-01-24 06:49:09,542 ssh goracle 'stat -c %s /tmp/www_9l0decwl/drxehsxlgz'
+2023-01-24 06:49:09,738 Check of downloaded files succeeded.
+2023-01-24 06:49:09,739 Transferring 209.72 MB took 10.827 s. Goodput: 154.960 Mbps
+2023-01-24 06:49:09,739 ✓ Test successful

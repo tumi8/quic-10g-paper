@@ -1,0 +1,196 @@
+2023-02-05 20:39:08,341 
+2023-02-05 20:39:08,342 Copy /tmp/logs_server_i1_lb3lq to algofi:/tmp
+2023-02-05 20:39:08,612 Copy /tmp/www_r174gdtk to algofi:/tmp
+2023-02-05 20:39:08,833 Copy /tmp/certs_3g5xp96n to algofi:/tmp
+2023-02-05 20:39:09,103 Copy /tmp/logs_sim_0z5antrh to zone:/tmp
+2023-02-05 20:39:09,373 Copy /tmp/logs_client_jmd47zpd to zone:/tmp
+2023-02-05 20:39:09,593 Copy /tmp/download_4w1bp275 to zone:/tmp
+2023-02-05 20:39:09,812 ssh algofi 'touch /tmp/www_r174gdtk/jjuqtjaxsz && shred -n 1 -s 8589934592 /tmp/www_r174gdtk/jjuqtjaxsz'
+2023-02-05 20:39:13,755 Generated random file: /tmp/www_r174gdtk/jjuqtjaxsz of size: 8589934592
+2023-02-05 20:39:13,755 Requests: https://server:4433/jjuqtjaxsz
+2023-02-05 20:39:13,756 Checking if file /tmp/quic-go-server/bin/activate exists
+2023-02-05 20:39:13,767 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:13,992 http://172.16.128.1:5000 "POST /commands/launch?nodes=algofi HTTP/1.1" 200 44
+2023-02-05 20:39:14,006 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:15,567 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-39-13_988189_unknown HTTP/1.1" 200 473
+2023-02-05 20:39:15,569 Checking if file /tmp/picoquic-client/bin/activate exists
+2023-02-05 20:39:15,581 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:15,656 http://172.16.128.1:5000 "POST /commands/launch?nodes=zone HTTP/1.1" 200 44
+2023-02-05 20:39:15,670 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:17,488 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-39-15_652620_unknown HTTP/1.1" 200 472
+2023-02-05 20:39:17,490 Setting variables:
+{'implementation': 'quic-go', 'interface': 'eno2np1', 'hostname': 'algofi', 'log_dir': '/tmp/logs_server_i1_lb3lq', 'www_dir': '/tmp/www_r174gdtk/', 'certs_dir': '/tmp/certs_3g5xp96n/', 'role': 'server'}
+on the host algofi
+2023-02-05 20:39:17,501 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:17,598 http://172.16.128.1:5000 "POST /allocations/set_variables/algofi HTTP/1.1" 200 0
+2023-02-05 20:39:17,600 Setting variables:
+{'implementation': 'picoquic', 'interface': 'eno2np1', 'hostname': 'zone', 'log_dir': '/tmp/logs_client_jmd47zpd', 'sim_log_dir': '/tmp/logs_sim_0z5antrh', 'download_dir': '/tmp/download_4w1bp275/', 'role': 'client'}
+on the host zone
+2023-02-05 20:39:17,611 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:17,669 http://172.16.128.1:5000 "POST /allocations/set_variables/zone HTTP/1.1" 200 0
+2023-02-05 20:39:17,671 Run pre-post-scripts/run-ethtool.sh on algofi
+2023-02-05 20:39:17,681 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:17,733 http://172.16.128.1:5000 "POST /commands/launch?nodes=algofi HTTP/1.1" 200 44
+2023-02-05 20:39:17,747 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:20,117 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-39-17_728425_unknown HTTP/1.1" 200 1238
+2023-02-05 20:39:20,118 Run pre-post-scripts/run-netstat.sh on algofi
+2023-02-05 20:39:20,129 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:20,179 http://172.16.128.1:5000 "POST /commands/launch?nodes=algofi HTTP/1.1" 200 44
+2023-02-05 20:39:20,192 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:22,175 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-39-20_174239_unknown HTTP/1.1" 200 1526
+2023-02-05 20:39:22,178 Run pre-post-scripts/set-rcvbuf.sh on algofi
+2023-02-05 20:39:22,189 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:22,244 http://172.16.128.1:5000 "POST /commands/launch?nodes=algofi HTTP/1.1" 200 44
+2023-02-05 20:39:22,256 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:24,404 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-39-22_239527_unknown HTTP/1.1" 200 698
+2023-02-05 20:39:24,406 Run pre-post-scripts/run-ethtool.sh on zone
+2023-02-05 20:39:24,416 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:24,467 http://172.16.128.1:5000 "POST /commands/launch?nodes=zone HTTP/1.1" 200 44
+2023-02-05 20:39:24,480 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:26,537 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-39-24_462890_unknown HTTP/1.1" 200 1236
+2023-02-05 20:39:26,538 Run pre-post-scripts/run-netstat.sh on zone
+2023-02-05 20:39:26,548 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:26,599 http://172.16.128.1:5000 "POST /commands/launch?nodes=zone HTTP/1.1" 200 44
+2023-02-05 20:39:26,610 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:28,677 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-39-26_594687_unknown HTTP/1.1" 200 1524
+2023-02-05 20:39:28,679 Run pre-post-scripts/set-rcvbuf.sh on zone
+2023-02-05 20:39:28,689 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:28,738 http://172.16.128.1:5000 "POST /commands/launch?nodes=zone HTTP/1.1" 200 44
+2023-02-05 20:39:28,749 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:39:30,403 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-39-28_734182_unknown HTTP/1.1" 200 696
+2023-02-05 20:39:30,405 Starting server:
+ ssh algofi 'cd quic-go; . /tmp/quic-go-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_i1_lb3lq/keys.log  LOGS=/tmp/logs_server_i1_lb3lq TESTCASE=goodput WWW=/tmp/www_r174gdtk/ CERTS=/tmp/certs_3g5xp96n/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-02-05 20:39:32,411 Starting client:
+ ssh zone 'cd picoquic; . /tmp/picoquic-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_jmd47zpd/keys.log  LOGS=/tmp/logs_client_jmd47zpd TESTCASE=goodput DOWNLOADS=/tmp/download_4w1bp275/ REQUESTS="https://server:4433/jjuqtjaxsz" ./run-client.sh'
+
+2023-02-05 20:40:36,180 Run pre-post-scripts/run-ethtool.sh on algofi
+2023-02-05 20:40:36,194 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:36,249 http://172.16.128.1:5000 "POST /commands/launch?nodes=algofi HTTP/1.1" 200 44
+2023-02-05 20:40:36,263 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:38,346 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-40-36_244027_unknown HTTP/1.1" 200 1238
+2023-02-05 20:40:38,348 Run pre-post-scripts/run-netstat.sh on algofi
+2023-02-05 20:40:38,360 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:38,407 http://172.16.128.1:5000 "POST /commands/launch?nodes=algofi HTTP/1.1" 200 44
+2023-02-05 20:40:38,422 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:40,318 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-40-38_403278_unknown HTTP/1.1" 200 1526
+2023-02-05 20:40:40,320 Run pre-post-scripts/set-buffers-default.sh on algofi
+2023-02-05 20:40:40,330 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:40,379 http://172.16.128.1:5000 "POST /commands/launch?nodes=algofi HTTP/1.1" 200 44
+2023-02-05 20:40:40,391 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:41,870 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-40-40_375407_unknown HTTP/1.1" 200 705
+2023-02-05 20:40:41,871 Run pre-post-scripts/run-ethtool.sh on zone
+2023-02-05 20:40:41,881 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:41,930 http://172.16.128.1:5000 "POST /commands/launch?nodes=zone HTTP/1.1" 200 44
+2023-02-05 20:40:41,942 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:43,982 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-40-41_926563_unknown HTTP/1.1" 200 1236
+2023-02-05 20:40:43,984 Run pre-post-scripts/run-netstat.sh on zone
+2023-02-05 20:40:43,996 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:44,044 http://172.16.128.1:5000 "POST /commands/launch?nodes=zone HTTP/1.1" 200 44
+2023-02-05 20:40:44,056 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:45,970 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-40-44_039404_unknown HTTP/1.1" 200 1524
+2023-02-05 20:40:45,972 Run pre-post-scripts/set-buffers-default.sh on zone
+2023-02-05 20:40:45,979 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:46,027 http://172.16.128.1:5000 "POST /commands/launch?nodes=zone HTTP/1.1" 200 44
+2023-02-05 20:40:46,040 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:47,566 http://172.16.128.1:5000 "GET /commands/await/2023-02-05_20-40-46_023406_unknown HTTP/1.1" 200 703
+2023-02-05 20:40:48,574 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host algofi
+2023-02-05 20:40:48,587 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:48,686 http://172.16.128.1:5000 "POST /allocations/set_variables/algofi HTTP/1.1" 200 0
+2023-02-05 20:40:48,688 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host zone
+2023-02-05 20:40:48,701 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-05 20:40:48,757 http://172.16.128.1:5000 "POST /allocations/set_variables/zone HTTP/1.1" 200 0
+2023-02-05 20:40:48,759 Client stdout
+2023-02-05 20:40:48,759 Starting Picoquic (v1.1.0.1) connection to server = server, port = 4433
+Set ALPN to h3 based on stored ticket
+Set version to 0x00000001 based on stored ticket
+Testing scenario: <jjuqtjaxsz>
+Max stream id bidir remote before start = 0 (0)
+Starting client connection. Version = 1, I-CID: 1f9bab0e0f17e881
+Max stream id bidir remote after start = 396 (100)
+Max stream id bidir remote after 0rtt = 396 (100)
+Opening stream 0 to GET /jjuqtjaxsz
+Waiting for packets.
+Client port (AF=2): 41441.
+Negotiated ALPN: h3
+Almost ready!
+
+Connection established. Version = 1, I-CID: 1f9bab0e0f17e881, verified: 1
+Stream 0 ended after 0 bytes
+All done, Closing the connection.
+Received a request to close the connection.
+Out of 1 zero RTT packets, 0 were acked by the server.
+Quic Bit was NOT greased by the client.
+Quic Bit was NOT greased by the server.
+ECN was not received.
+ECN was acknowledged (ect0: 288274, ect1: 0, ce: 0).
+Received 8591245374 bytes in 63.549592 seconds, 1081.516983 Mbps.
+max_data_local: 20639121408
+max_stream_data_local: 41278242816
+max_data_remote: 786432
+max_stream_data_remote: 524288
+ack_delay_remote: 1000 ... 1000
+max_ack_gap_remote: 2
+ack_delay_local: 25000 ... 25000
+max_ack_gap_local: 2
+max_mtu_sent: 1252
+max_mtu_received: 1428
+Received ticket from server (h3):
+ticket time = 1675625972625, kx = 17, suite = 1301, 182 ticket, 32 secret.
+lifetime = 604800, age_add = 33779845, 0 nonce, 161 ticket, 8 extensions.
+ticket extensions: 42(ED: ffffffff),
+Client exit with code = 0
+
+2023-02-05 20:40:48,760 Client stderr
+2023-02-05 20:40:48,760 Warning: Permanently added 'zone,172.16.172.1' (ECDSA) to the list of known hosts.
++ [[ goodput != \g\o\o\d\p\u\t ]]
+++ echo https://server:4433/jjuqtjaxsz
+++ grep ://
+++ sed '-es,^\(.*://\).*,\1,g'
++ PROTO=https://
+++ echo server:4433/jjuqtjaxsz
++ URL=server:4433/jjuqtjaxsz
+++ echo server:4433/jjuqtjaxsz
+++ grep @
+++ cut -d@ -f1
++ USER=
+++ echo server:4433/jjuqtjaxsz
+++ cut -d/ -f1
++ HOSTPORT=server:4433
+++ echo server:4433
+++ sed -e 's,:.*,,g'
++ HOST=server
+++ echo server:4433
+++ sed -e 's,^.*:,:,g' -e 's,.*:\([0-9]*\).*,\1,g' -e 's,[^0-9],,g'
++ PORT=4433
+++ echo server:4433/jjuqtjaxsz
+++ grep /
+++ cut -d/ -f2-
++ FILES=jjuqtjaxsz
+++ date +%s%N
++ start=1675625972616465206
++ ./picoquicdemo -n server -o /tmp/download_4w1bp275/ server 4433 jjuqtjaxsz
++ ret=0
+++ date +%s%N
++ end=1675626036170601802
++ echo '{"start":' 1675625972616465206, '"end":' '1675626036170601802}'
+
+2023-02-05 20:40:48,785 Server stderr
+2023-02-05 20:40:48,785 Warning: Permanently added 'algofi,172.16.169.1' (ECDSA) to the list of known hosts.
+
+2023-02-05 20:40:48,785 Copy algofi:/tmp/logs_server_i1_lb3lq to /tmp
+2023-02-05 20:40:48,955 Copy algofi:/tmp/certs_3g5xp96n to /tmp
+2023-02-05 20:40:49,125 Copy zone:/tmp/logs_sim_0z5antrh to /tmp
+2023-02-05 20:40:49,344 Copy zone:/tmp/logs_client_jmd47zpd to /tmp
+2023-02-05 20:40:49,565 Interop duration: 0:01:03.768278
+2023-02-05 20:40:49,565 Client  duration: 0:01:03.554137
+2023-02-05 20:40:49,566 Difference: 0.34%
+2023-02-05 20:40:49,566 ssh zone 'stat -c %s /tmp/download_4w1bp275/jjuqtjaxsz'
+2023-02-05 20:40:49,761 ssh algofi 'stat -c %s /tmp/www_r174gdtk/jjuqtjaxsz'
+2023-02-05 20:40:49,962 Check of downloaded files succeeded.
+2023-02-05 20:40:49,963 Transferring 8589.93 MB took 63.554 s. Goodput: 1081.275 Mbps
+2023-02-05 20:40:49,963 ✓ Test successful

@@ -1,0 +1,82 @@
+2023-01-24 08:24:21,011 
+2023-01-24 08:24:21,012 Copy /tmp/logs_server__g7r1_b7 to goracle:/tmp
+2023-01-24 08:24:21,280 Copy /tmp/www_nxglwti1 to goracle:/tmp
+2023-01-24 08:24:21,551 Copy /tmp/certs_vuzn2k8p to goracle:/tmp
+2023-01-24 08:24:21,821 Copy /tmp/logs_sim_bl8hgdbw to gard:/tmp
+2023-01-24 08:24:22,091 Copy /tmp/logs_client_m6f_t6l0 to gard:/tmp
+2023-01-24 08:24:22,361 Copy /tmp/download_qhv4xqrc to gard:/tmp
+2023-01-24 08:24:22,632 ssh goracle 'touch /tmp/www_nxglwti1/vgcquyrlgh && shred -n 1 -s 8589934592 /tmp/www_nxglwti1/vgcquyrlgh'
+2023-01-24 08:24:26,516 Generated random file: /tmp/www_nxglwti1/vgcquyrlgh of size: 8589934592
+2023-01-24 08:24:26,516 Requests: https://server:4433/vgcquyrlgh
+2023-01-24 08:24:26,517 Checking if file /tmp/quiche-server/bin/activate exists
+2023-01-24 08:24:26,530 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 08:24:26,583 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-24 08:24:26,596 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 08:24:27,568 http://172.16.128.1:5000 "GET /commands/await/2023-01-24_08-24-26_578841_unknown HTTP/1.1" 200 473
+2023-01-24 08:24:27,570 Checking if file /tmp/lsquic-client/bin/activate exists
+2023-01-24 08:24:27,581 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 08:24:27,633 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-24 08:24:27,645 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 08:24:28,631 http://172.16.128.1:5000 "GET /commands/await/2023-01-24_08-24-27_629266_unknown HTTP/1.1" 200 470
+2023-01-24 08:24:28,633 Setting variables:
+{'implementation': 'quiche', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server__g7r1_b7', 'www_dir': '/tmp/www_nxglwti1/', 'certs_dir': '/tmp/certs_vuzn2k8p/', 'role': 'server'}
+on the host goracle
+2023-01-24 08:24:28,645 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 08:24:28,749 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-24 08:24:28,751 Setting variables:
+{'implementation': 'lsquic', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_m6f_t6l0', 'sim_log_dir': '/tmp/logs_sim_bl8hgdbw', 'download_dir': '/tmp/download_qhv4xqrc/', 'role': 'client'}
+on the host gard
+2023-01-24 08:24:28,762 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 08:24:28,819 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-24 08:24:28,820 Starting server:
+ ssh goracle 'cd quiche; . /tmp/quiche-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server__g7r1_b7/keys.log  LOGS=/tmp/logs_server__g7r1_b7 TESTCASE=goodput WWW=/tmp/www_nxglwti1/ CERTS=/tmp/certs_vuzn2k8p/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-01-24 08:24:30,827 Starting client:
+ ssh gard 'cd lsquic; . /tmp/lsquic-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_m6f_t6l0/keys.log  LOGS=/tmp/logs_client_m6f_t6l0 TESTCASE=goodput DOWNLOADS=/tmp/download_qhv4xqrc/ REQUESTS="https://server:4433/vgcquyrlgh" ./run-client.sh'
+
+2023-01-24 08:25:01,065 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-01-24 08:25:01,077 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 08:25:01,172 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-24 08:25:01,174 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-01-24 08:25:01,188 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 08:25:01,242 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-24 08:25:01,243 Client stderr
+2023-01-24 08:25:01,243 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
+Value not found
+Value not found
+Value not found
+Value not found
+Value not found
+Value not found
+Value not found
+Value not found
+Value not found
+Value not found
+08:24:32.811 [NOTICE] QL loss bits turned off because of -G.  If you want to turn it on, just override: -G dir -o ql_bits=2
+08:24:32.817 [NOTICE] downloading /vgcquyrlgh to /tmp/download_qhv4xqrc//vgcquyrlgh
+
+2023-01-24 08:25:01,275 Server stderr
+2023-01-24 08:25:01,275 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
+Value not found
+Value not found
+Value not found
+Value not found
+
+2023-01-24 08:25:01,276 Copy goracle:/tmp/logs_server__g7r1_b7 to /tmp
+2023-01-24 08:25:01,495 Copy goracle:/tmp/certs_vuzn2k8p to /tmp
+2023-01-24 08:25:01,715 Copy gard:/tmp/logs_sim_bl8hgdbw to /tmp
+2023-01-24 08:25:01,935 Copy gard:/tmp/logs_client_m6f_t6l0 to /tmp
+2023-01-24 08:25:02,155 Interop duration: 0:00:29.231978
+2023-01-24 08:25:02,155 Client  duration: 0:00:27.246929
+2023-01-24 08:25:02,156 Difference: 6.79%
+2023-01-24 08:25:02,156 ssh gard 'stat -c %s /tmp/download_qhv4xqrc/vgcquyrlgh'
+2023-01-24 08:25:02,310 ssh goracle 'stat -c %s /tmp/www_nxglwti1/vgcquyrlgh'
+2023-01-24 08:25:02,462 Different filesize: 8589934655.0 | 8589934592.0
+2023-01-24 08:25:02,463 Different filesize tolerated (less than 1%
+2023-01-24 08:25:02,463 Check of downloaded files succeeded.
+2023-01-24 08:25:02,463 Transferring 8589.93 MB took 27.247 s. Goodput: 2522.100 Mbps
+2023-01-24 08:25:02,464 ✓ Test successful

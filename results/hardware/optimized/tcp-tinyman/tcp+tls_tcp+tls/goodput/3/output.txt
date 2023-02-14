@@ -1,0 +1,154 @@
+2023-01-28 12:28:57,976 
+2023-01-28 12:28:57,977 Copy /tmp/logs_server_lb6wlfej to tinyman:/tmp
+2023-01-28 12:28:58,246 Copy /tmp/www_ii2k399k to tinyman:/tmp
+2023-01-28 12:28:58,516 Copy /tmp/certs_rwvwdt5v to tinyman:/tmp
+2023-01-28 12:28:58,786 Copy /tmp/logs_sim_86wqro80 to idex:/tmp
+2023-01-28 12:28:59,056 Copy /tmp/logs_client_8qod9c7n to idex:/tmp
+2023-01-28 12:28:59,275 Copy /tmp/download_4w5oxxj4 to idex:/tmp
+2023-01-28 12:28:59,495 ssh tinyman 'touch /tmp/www_ii2k399k/qianmjgprm && shred -n 1 -s 8589934592 /tmp/www_ii2k399k/qianmjgprm'
+2023-01-28 12:29:04,506 Generated random file: /tmp/www_ii2k399k/qianmjgprm of size: 8589934592
+2023-01-28 12:29:04,506 Requests: https://server:4433/qianmjgprm
+2023-01-28 12:29:04,507 Checking if file /tmp/tcp+tls-server/bin/activate exists
+2023-01-28 12:29:04,518 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:04,595 http://172.16.128.1:5000 "POST /commands/launch?nodes=tinyman HTTP/1.1" 200 44
+2023-01-28 12:29:04,608 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:06,178 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-04_568502_unknown HTTP/1.1" 200 474
+2023-01-28 12:29:06,179 Checking if file /tmp/tcp+tls-client/bin/activate exists
+2023-01-28 12:29:06,188 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:06,242 http://172.16.128.1:5000 "POST /commands/launch?nodes=idex HTTP/1.1" 200 44
+2023-01-28 12:29:06,252 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:07,730 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-06_237868_unknown HTTP/1.1" 200 471
+2023-01-28 12:29:07,732 Setting variables:
+{'implementation': 'tcp+tls', 'interface': 'eno2', 'hostname': 'tinyman', 'log_dir': '/tmp/logs_server_lb6wlfej', 'www_dir': '/tmp/www_ii2k399k/', 'certs_dir': '/tmp/certs_rwvwdt5v/', 'role': 'server', 'rmem_value': 6815744}
+on the host tinyman
+2023-01-28 12:29:07,743 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:07,848 http://172.16.128.1:5000 "POST /allocations/set_variables/tinyman HTTP/1.1" 200 0
+2023-01-28 12:29:07,850 Setting variables:
+{'implementation': 'tcp+tls', 'interface': 'eno2', 'hostname': 'idex', 'log_dir': '/tmp/logs_client_8qod9c7n', 'sim_log_dir': '/tmp/logs_sim_86wqro80', 'download_dir': '/tmp/download_4w5oxxj4/', 'role': 'client', 'rmem_value': 6815744}
+on the host idex
+2023-01-28 12:29:07,862 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:07,916 http://172.16.128.1:5000 "POST /allocations/set_variables/idex HTTP/1.1" 200 0
+2023-01-28 12:29:07,918 Run pre-post-scripts/start-pidstat.sh on tinyman
+2023-01-28 12:29:07,930 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:07,978 http://172.16.128.1:5000 "POST /commands/launch?nodes=tinyman HTTP/1.1" 200 44
+2023-01-28 12:29:07,992 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:10,406 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-07_975103_unknown HTTP/1.1" 200 1553
+2023-01-28 12:29:10,408 Run pre-post-scripts/run-ethtool.sh on tinyman
+2023-01-28 12:29:10,420 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:10,479 http://172.16.128.1:5000 "POST /commands/launch?nodes=tinyman HTTP/1.1" 200 44
+2023-01-28 12:29:10,488 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:12,714 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-10_474893_unknown HTTP/1.1" 200 1239
+2023-01-28 12:29:12,715 Run pre-post-scripts/run-netstat.sh on tinyman
+2023-01-28 12:29:12,725 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:12,777 http://172.16.128.1:5000 "POST /commands/launch?nodes=tinyman HTTP/1.1" 200 44
+2023-01-28 12:29:12,788 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:15,042 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-12_773075_unknown HTTP/1.1" 200 1527
+2023-01-28 12:29:15,044 Run pre-post-scripts/set-rcvbuf.sh on tinyman
+2023-01-28 12:29:15,056 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:15,107 http://172.16.128.1:5000 "POST /commands/launch?nodes=tinyman HTTP/1.1" 200 44
+2023-01-28 12:29:15,120 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:17,144 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-15_102547_unknown HTTP/1.1" 200 618
+2023-01-28 12:29:17,145 Run pre-post-scripts/default-nic-offload.sh on tinyman
+2023-01-28 12:29:17,155 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:17,250 http://172.16.128.1:5000 "POST /commands/launch?nodes=tinyman HTTP/1.1" 200 44
+2023-01-28 12:29:17,259 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:19,291 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-17_245191_unknown HTTP/1.1" 200 1023
+2023-01-28 12:29:19,293 Run pre-post-scripts/start-pidstat.sh on idex
+2023-01-28 12:29:19,303 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:19,355 http://172.16.128.1:5000 "POST /commands/launch?nodes=idex HTTP/1.1" 200 44
+2023-01-28 12:29:19,368 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:21,875 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-19_352207_unknown HTTP/1.1" 200 1550
+2023-01-28 12:29:21,877 Run pre-post-scripts/run-ethtool.sh on idex
+2023-01-28 12:29:21,888 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:21,965 http://172.16.128.1:5000 "POST /commands/launch?nodes=idex HTTP/1.1" 200 44
+2023-01-28 12:29:21,979 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:24,072 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-21_961963_unknown HTTP/1.1" 200 1236
+2023-01-28 12:29:24,073 Run pre-post-scripts/run-netstat.sh on idex
+2023-01-28 12:29:24,086 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:24,181 http://172.16.128.1:5000 "POST /commands/launch?nodes=idex HTTP/1.1" 200 44
+2023-01-28 12:29:24,193 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:26,100 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-24_176712_unknown HTTP/1.1" 200 1524
+2023-01-28 12:29:26,101 Run pre-post-scripts/set-rcvbuf.sh on idex
+2023-01-28 12:29:26,111 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:26,163 http://172.16.128.1:5000 "POST /commands/launch?nodes=idex HTTP/1.1" 200 44
+2023-01-28 12:29:26,174 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:28,043 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-26_158847_unknown HTTP/1.1" 200 615
+2023-01-28 12:29:28,044 Run pre-post-scripts/default-nic-offload.sh on idex
+2023-01-28 12:29:28,054 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:28,102 http://172.16.128.1:5000 "POST /commands/launch?nodes=idex HTTP/1.1" 200 44
+2023-01-28 12:29:28,115 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:30,199 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-28_097543_unknown HTTP/1.1" 200 1020
+2023-01-28 12:29:30,201 Starting server:
+ ssh tinyman 'cd tcp+tls; . /tmp/tcp+tls-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_lb6wlfej/keys.log  LOGS=/tmp/logs_server_lb6wlfej TESTCASE=goodput WWW=/tmp/www_ii2k399k/ CERTS=/tmp/certs_rwvwdt5v/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-01-28 12:29:32,205 Starting client:
+ ssh idex 'cd tcp+tls; . /tmp/tcp+tls-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_8qod9c7n/keys.log  LOGS=/tmp/logs_client_8qod9c7n TESTCASE=goodput DOWNLOADS=/tmp/download_4w5oxxj4/ REQUESTS="https://server:4433/qianmjgprm" ./run-client.sh'
+
+2023-01-28 12:29:41,495 Run pre-post-scripts/stop-pidstat.sh on tinyman
+2023-01-28 12:29:41,508 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:41,562 http://172.16.128.1:5000 "POST /commands/launch?nodes=tinyman HTTP/1.1" 200 44
+2023-01-28 12:29:41,574 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:42,924 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-41_557519_unknown HTTP/1.1" 200 528
+2023-01-28 12:29:42,926 Run pre-post-scripts/run-ethtool.sh on tinyman
+2023-01-28 12:29:42,938 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:42,988 http://172.16.128.1:5000 "POST /commands/launch?nodes=tinyman HTTP/1.1" 200 44
+2023-01-28 12:29:43,001 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:44,945 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-42_984067_unknown HTTP/1.1" 200 1239
+2023-01-28 12:29:44,947 Run pre-post-scripts/run-netstat.sh on tinyman
+2023-01-28 12:29:44,958 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:45,010 http://172.16.128.1:5000 "POST /commands/launch?nodes=tinyman HTTP/1.1" 200 44
+2023-01-28 12:29:45,022 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:46,924 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-45_005628_unknown HTTP/1.1" 200 1527
+2023-01-28 12:29:46,926 Run pre-post-scripts/set-buffers-default.sh on tinyman
+2023-01-28 12:29:46,936 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:46,986 http://172.16.128.1:5000 "POST /commands/launch?nodes=tinyman HTTP/1.1" 200 44
+2023-01-28 12:29:46,999 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:48,373 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-46_982310_unknown HTTP/1.1" 200 706
+2023-01-28 12:29:48,375 Run pre-post-scripts/stop-pidstat.sh on idex
+2023-01-28 12:29:48,385 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:48,433 http://172.16.128.1:5000 "POST /commands/launch?nodes=idex HTTP/1.1" 200 44
+2023-01-28 12:29:48,447 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:49,822 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-48_429952_unknown HTTP/1.1" 200 525
+2023-01-28 12:29:49,824 Run pre-post-scripts/run-ethtool.sh on idex
+2023-01-28 12:29:49,833 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:49,879 http://172.16.128.1:5000 "POST /commands/launch?nodes=idex HTTP/1.1" 200 44
+2023-01-28 12:29:49,891 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:52,036 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-49_874896_unknown HTTP/1.1" 200 1236
+2023-01-28 12:29:52,037 Run pre-post-scripts/run-netstat.sh on idex
+2023-01-28 12:29:52,049 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:52,100 http://172.16.128.1:5000 "POST /commands/launch?nodes=idex HTTP/1.1" 200 44
+2023-01-28 12:29:52,114 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:53,928 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-52_095723_unknown HTTP/1.1" 200 1524
+2023-01-28 12:29:53,930 Run pre-post-scripts/set-buffers-default.sh on idex
+2023-01-28 12:29:53,941 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:53,994 http://172.16.128.1:5000 "POST /commands/launch?nodes=idex HTTP/1.1" 200 44
+2023-01-28 12:29:54,006 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:55,391 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-29-53_989973_unknown HTTP/1.1" 200 703
+2023-01-28 12:29:56,398 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': '', 'rmem_value': ''}
+on the host tinyman
+2023-01-28 12:29:56,412 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:56,510 http://172.16.128.1:5000 "POST /allocations/set_variables/tinyman HTTP/1.1" 200 0
+2023-01-28 12:29:56,512 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': '', 'rmem_value': ''}
+on the host idex
+2023-01-28 12:29:56,524 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:29:56,576 http://172.16.128.1:5000 "POST /allocations/set_variables/idex HTTP/1.1" 200 0
+2023-01-28 12:29:56,578 Client stderr
+2023-01-28 12:29:56,578 Warning: Permanently added 'idex,172.16.136.1' (ECDSA) to the list of known hosts.
+
+2023-01-28 12:29:56,579 Server stderr
+2023-01-28 12:29:56,579 Warning: Permanently added 'tinyman,172.16.139.1' (ECDSA) to the list of known hosts.
+
+2023-01-28 12:29:56,579 Copy tinyman:/tmp/logs_server_lb6wlfej to /tmp
+2023-01-28 12:29:56,798 Copy tinyman:/tmp/certs_rwvwdt5v to /tmp
+2023-01-28 12:29:56,968 Copy idex:/tmp/logs_sim_86wqro80 to /tmp
+2023-01-28 12:29:57,188 Copy idex:/tmp/logs_client_8qod9c7n to /tmp
+2023-01-28 12:29:57,408 Interop duration: 0:00:09.289112
+2023-01-28 12:29:57,408 Client  duration: 0:00:09.084245
+2023-01-28 12:29:57,408 Difference: 2.21%
+2023-01-28 12:29:57,409 ssh idex 'stat -c %s /tmp/download_4w5oxxj4/qianmjgprm'
+2023-01-28 12:29:57,613 ssh tinyman 'stat -c %s /tmp/www_ii2k399k/qianmjgprm'
+2023-01-28 12:29:57,817 Check of downloaded files succeeded.
+2023-01-28 12:29:57,818 Transferring 8589.93 MB took 9.084 s. Goodput: 7564.688 Mbps
+2023-01-28 12:29:57,819 ✓ Test successful

@@ -1,0 +1,98 @@
+2023-02-03 14:23:40,584 
+2023-02-03 14:23:40,584 Copy /tmp/logs_server_lai3mhoc to goracle:/tmp
+2023-02-03 14:23:40,854 Copy /tmp/www_jmjsjf7s to goracle:/tmp
+2023-02-03 14:23:41,124 Copy /tmp/certs_luntr5h6 to goracle:/tmp
+2023-02-03 14:23:41,394 Copy /tmp/logs_sim_o1dxwz92 to gard:/tmp
+2023-02-03 14:23:41,664 Copy /tmp/logs_client_vmfh0dkg to gard:/tmp
+2023-02-03 14:23:41,884 Copy /tmp/download_hqghygda to gard:/tmp
+2023-02-03 14:23:42,104 ssh goracle 'touch /tmp/www_jmjsjf7s/ctdxjzheby && shred -n 1 -s 524288000 /tmp/www_jmjsjf7s/ctdxjzheby'
+2023-02-03 14:23:42,557 Generated random file: /tmp/www_jmjsjf7s/ctdxjzheby of size: 524288000
+2023-02-03 14:23:42,558 Requests: https://server:4433/ctdxjzheby
+2023-02-03 14:23:42,558 Checking if file /tmp/picoquic-server/bin/activate exists
+2023-02-03 14:23:42,569 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:23:42,626 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-02-03 14:23:42,638 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:23:44,093 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_14-23-42_621790_unknown HTTP/1.1" 200 475
+2023-02-03 14:23:44,095 Checking if file /tmp/mvfst-client/bin/activate exists
+2023-02-03 14:23:44,104 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:23:44,161 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-02-03 14:23:44,175 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:23:45,616 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_14-23-44_156719_unknown HTTP/1.1" 200 469
+2023-02-03 14:23:45,618 Setting variables:
+{'implementation': 'picoquic', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_lai3mhoc', 'www_dir': '/tmp/www_jmjsjf7s/', 'certs_dir': '/tmp/certs_luntr5h6/', 'role': 'server'}
+on the host goracle
+2023-02-03 14:23:45,627 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:23:45,725 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 14:23:45,727 Setting variables:
+{'implementation': 'mvfst', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_vmfh0dkg', 'sim_log_dir': '/tmp/logs_sim_o1dxwz92', 'download_dir': '/tmp/download_hqghygda/', 'role': 'client'}
+on the host gard
+2023-02-03 14:23:45,737 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:23:45,794 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 14:23:45,796 Starting server:
+ ssh goracle 'cd picoquic; . /tmp/picoquic-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_lai3mhoc/keys.log  LOGS=/tmp/logs_server_lai3mhoc TESTCASE=goodput WWW=/tmp/www_jmjsjf7s/ CERTS=/tmp/certs_luntr5h6/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-02-03 14:23:47,803 Starting client:
+ ssh gard 'cd mvfst; . /tmp/mvfst-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_vmfh0dkg/keys.log  LOGS=/tmp/logs_client_vmfh0dkg TESTCASE=goodput DOWNLOADS=/tmp/download_hqghygda/ REQUESTS="https://server:4433/ctdxjzheby" ./run-client.sh'
+
+2023-02-03 14:25:10,086 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-02-03 14:25:10,098 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:25:10,163 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 14:25:10,165 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-02-03 14:25:10,176 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:25:10,500 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 14:25:10,502 Client stdout
+2023-02-03 14:25:10,502 requesting files '/ctdxjzheby'
+
+2023-02-03 14:25:10,503 Client stderr
+2023-02-03 14:25:10,503 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
++ [[ goodput == \g\o\o\d\p\u\t ]]
++ '[' -z x ']'
+++ echo https://server:4433/ctdxjzheby
+++ tr ' ' '\n'
+++ awk -F / '{ print "/" $4 }'
+++ paste -sd,
++ INVOCATIONS=/ctdxjzheby
++ REQS=($REQUESTS)
++ REQ=https://server:4433/ctdxjzheby
+++ echo https://server:4433/ctdxjzheby
+++ cut -d/ -f3
+++ cut -d: -f1
++ SERVER=server
+++ echo https://server:4433/ctdxjzheby
+++ cut -d: -f3
+++ cut -d/ -f1
++ PORT=4433
+++ date +%s%N
++ start=1675430628010403124
++ for INVOCATION in ${INVOCATIONS}
++ echo 'requesting files '\''/ctdxjzheby'\'''
++ ./hq --mode=client --host=server --port=4433 --quic-version=1 --path=/ctdxjzheby --outdir=/tmp/download_hqghygda/ --logdir=/tmp/logs_client_vmfh0dkg --qlogger_path=
+I0203 14:23:48.045053 93690 HQClient.cpp:61] HQClient connecting to 10.0.0.2:4433
+I0203 14:23:48.050061 93690 CurlClient.cpp:187] Sending request for /ctdxjzheby
+I0203 14:25:09.075105 93690 CurlClient.cpp:273] Got EOM for /ctdxjzheby. Txn Time= 81025 ms
+++ date +%s%N
++ end=1675430709078091373
++ echo '{"start":' 1675430628010403124, '"end":' '1675430709078091373}'
+
+2023-02-03 14:25:10,503 Server stderr
+2023-02-03 14:25:10,504 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
++ [[ goodput != \g\o\o\d\p\u\t ]]
++ ./picoquicdemo -c /tmp/certs_luntr5h6//cert.pem -k /tmp/certs_luntr5h6//priv.key -p 4433 -a 10.0.0.2 -w /tmp/www_jmjsjf7s/ -n server
+No token file present. Will create one as <demo_token_store.bin>.
+
+2023-02-03 14:25:10,504 Copy goracle:/tmp/logs_server_lai3mhoc to /tmp
+2023-02-03 14:25:10,723 Copy goracle:/tmp/certs_luntr5h6 to /tmp
+2023-02-03 14:25:10,943 Copy gard:/tmp/logs_sim_o1dxwz92 to /tmp
+2023-02-03 14:25:11,112 Copy gard:/tmp/logs_client_vmfh0dkg to /tmp
+2023-02-03 14:25:11,332 Interop duration: 0:01:21.276532
+2023-02-03 14:25:11,332 Client  duration: 0:01:21.067688
+2023-02-03 14:25:11,332 Difference: 0.26%
+2023-02-03 14:25:11,333 ssh gard 'stat -c %s /tmp/download_hqghygda/ctdxjzheby'
+2023-02-03 14:25:11,482 ssh goracle 'stat -c %s /tmp/www_jmjsjf7s/ctdxjzheby'
+2023-02-03 14:25:11,634 Check of downloaded files succeeded.
+2023-02-03 14:25:11,635 Transferring 524.29 MB took 81.068 s. Goodput: 51.738 Mbps
+2023-02-03 14:25:11,635 ✓ Test successful

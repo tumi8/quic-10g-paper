@@ -1,0 +1,60 @@
+2023-02-03 02:37:42,141 
+2023-02-03 02:37:42,142 Copy /tmp/logs_server_d7yruqcy to goracle:/tmp
+2023-02-03 02:37:42,411 Copy /tmp/www_vezzghfe to goracle:/tmp
+2023-02-03 02:37:42,631 Copy /tmp/certs_7p7mx6_b to goracle:/tmp
+2023-02-03 02:37:42,902 Copy /tmp/logs_sim_oh1wpe6s to gard:/tmp
+2023-02-03 02:37:43,172 Copy /tmp/logs_client_b0ohrboc to gard:/tmp
+2023-02-03 02:37:43,442 Copy /tmp/download_eeav74kw to gard:/tmp
+2023-02-03 02:37:43,712 ssh goracle 'touch /tmp/www_vezzghfe/zcgwxybcbm && shred -n 1 -s 8589934592 /tmp/www_vezzghfe/zcgwxybcbm'
+2023-02-03 02:37:47,569 Generated random file: /tmp/www_vezzghfe/zcgwxybcbm of size: 8589934592
+2023-02-03 02:37:47,570 Requests: https://server:4433/zcgwxybcbm
+2023-02-03 02:37:47,570 Checking if file /tmp/picoquic-server/bin/activate exists
+2023-02-03 02:37:47,583 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 02:37:47,645 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-02-03 02:37:47,658 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 02:37:49,112 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_02-37-47_639766_unknown HTTP/1.1" 200 475
+2023-02-03 02:37:49,114 Checking if file /tmp/mvfst-client/bin/activate exists
+2023-02-03 02:37:49,126 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 02:37:49,185 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-02-03 02:37:49,198 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 02:37:50,640 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_02-37-49_181802_unknown HTTP/1.1" 200 469
+2023-02-03 02:37:50,642 Setting variables:
+{'implementation': 'picoquic', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_d7yruqcy', 'www_dir': '/tmp/www_vezzghfe/', 'certs_dir': '/tmp/certs_7p7mx6_b/', 'role': 'server'}
+on the host goracle
+2023-02-03 02:37:50,653 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 02:37:50,762 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 02:37:50,764 Setting variables:
+{'implementation': 'mvfst', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_b0ohrboc', 'sim_log_dir': '/tmp/logs_sim_oh1wpe6s', 'download_dir': '/tmp/download_eeav74kw/', 'role': 'client'}
+on the host gard
+2023-02-03 02:37:50,776 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 02:37:50,834 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 02:37:50,835 Starting server:
+ ssh goracle 'cd picoquic; . /tmp/picoquic-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_d7yruqcy/keys.log  LOGS=/tmp/logs_server_d7yruqcy TESTCASE=goodput WWW=/tmp/www_vezzghfe/ CERTS=/tmp/certs_7p7mx6_b/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-02-03 02:37:52,842 Starting client:
+ ssh gard 'cd mvfst; . /tmp/mvfst-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_b0ohrboc/keys.log  LOGS=/tmp/logs_client_b0ohrboc TESTCASE=goodput DOWNLOADS=/tmp/download_eeav74kw/ REQUESTS="https://server:4433/zcgwxybcbm" ./run-client.sh'
+
+2023-02-03 02:40:52,852 Client expired: Command 'ssh gard 'cd mvfst; . /tmp/mvfst-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_b0ohrboc/keys.log  LOGS=/tmp/logs_client_b0ohrboc TESTCASE=goodput DOWNLOADS=/tmp/download_eeav74kw/ REQUESTS="https://server:4433/zcgwxybcbm" ./run-client.sh'' timed out after 180 seconds
+2023-02-03 02:40:53,858 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-02-03 02:40:53,872 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 02:40:53,974 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 02:40:53,976 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-02-03 02:40:53,988 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 02:40:54,044 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 02:40:54,074 Server stderr
+2023-02-03 02:40:54,074 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
++ [[ goodput != \g\o\o\d\p\u\t ]]
++ ./picoquicdemo -c /tmp/certs_7p7mx6_b//cert.pem -k /tmp/certs_7p7mx6_b//priv.key -p 4433 -a 10.0.0.2 -w /tmp/www_vezzghfe/ -G cubic -n server
+No token file present. Will create one as <demo_token_store.bin>.
+
+2023-02-03 02:40:54,074 Copy goracle:/tmp/logs_server_d7yruqcy to /tmp
+2023-02-03 02:40:54,294 Copy goracle:/tmp/certs_7p7mx6_b to /tmp
+2023-02-03 02:40:54,514 Copy gard:/tmp/logs_sim_oh1wpe6s to /tmp
+2023-02-03 02:40:54,733 Copy gard:/tmp/logs_client_b0ohrboc to /tmp
+2023-02-03 02:40:54,953 Failed to read time.json: [Errno 2] No such file or directory: '/tmp/logs_client_b0ohrboc/time.json'
+2023-02-03 02:40:54,954 Client or server expired
+2023-02-03 02:40:54,954 ☠ Test failed

@@ -1,0 +1,70 @@
+2023-02-03 05:51:10,445 
+2023-02-03 05:51:10,445 Copy /tmp/logs_server_4g7g6w8b to goracle:/tmp
+2023-02-03 05:51:10,664 Copy /tmp/www_dfsqux3a to goracle:/tmp
+2023-02-03 05:51:10,884 Copy /tmp/certs_btqg6k2a to goracle:/tmp
+2023-02-03 05:51:11,104 Copy /tmp/logs_sim_fyw9dm2e to gard:/tmp
+2023-02-03 05:51:11,323 Copy /tmp/logs_client_89kdzrty to gard:/tmp
+2023-02-03 05:51:11,593 Copy /tmp/download_ckklpo7v to gard:/tmp
+2023-02-03 05:51:11,863 ssh goracle 'touch /tmp/www_dfsqux3a/kkjldvmlwl && shred -n 1 -s 8589934592 /tmp/www_dfsqux3a/kkjldvmlwl'
+2023-02-03 05:51:15,772 Generated random file: /tmp/www_dfsqux3a/kkjldvmlwl of size: 8589934592
+2023-02-03 05:51:15,773 Requests: https://server:4433/kkjldvmlwl
+2023-02-03 05:51:15,773 Checking if file /tmp/quic-go-server/bin/activate exists
+2023-02-03 05:51:15,786 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 05:51:15,848 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-02-03 05:51:15,860 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 05:51:17,287 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_05-51-15_842875_unknown HTTP/1.1" 200 474
+2023-02-03 05:51:17,289 Checking if file /tmp/mvfst-client/bin/activate exists
+2023-02-03 05:51:17,300 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 05:51:17,349 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-02-03 05:51:17,361 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 05:51:18,796 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_05-51-17_345474_unknown HTTP/1.1" 200 469
+2023-02-03 05:51:18,798 Setting variables:
+{'implementation': 'quic-go', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_4g7g6w8b', 'www_dir': '/tmp/www_dfsqux3a/', 'certs_dir': '/tmp/certs_btqg6k2a/', 'role': 'server'}
+on the host goracle
+2023-02-03 05:51:18,808 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 05:51:18,910 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 05:51:18,912 Setting variables:
+{'implementation': 'mvfst', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_89kdzrty', 'sim_log_dir': '/tmp/logs_sim_fyw9dm2e', 'download_dir': '/tmp/download_ckklpo7v/', 'role': 'client'}
+on the host gard
+2023-02-03 05:51:18,924 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 05:51:18,978 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 05:51:18,980 Starting server:
+ ssh goracle 'cd quic-go; . /tmp/quic-go-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_4g7g6w8b/keys.log  LOGS=/tmp/logs_server_4g7g6w8b TESTCASE=goodput WWW=/tmp/www_dfsqux3a/ CERTS=/tmp/certs_btqg6k2a/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-02-03 05:51:20,985 Starting client:
+ ssh gard 'cd mvfst; . /tmp/mvfst-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_89kdzrty/keys.log  LOGS=/tmp/logs_client_89kdzrty TESTCASE=goodput DOWNLOADS=/tmp/download_ckklpo7v/ REQUESTS="https://server:4433/kkjldvmlwl" ./run-client.sh'
+
+2023-02-03 05:52:28,520 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-02-03 05:52:28,533 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 05:52:28,644 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 05:52:28,646 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-02-03 05:52:28,658 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 05:52:28,711 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 05:52:28,713 Client stdout
+2023-02-03 05:52:28,713 requesting files '/kkjldvmlwl'
+
+2023-02-03 05:52:28,713 Client stderr
+2023-02-03 05:52:28,714 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
+I0203 05:51:21.224905 41407 HQClient.cpp:61] HQClient connecting to 10.0.0.2:4433
+I0203 05:51:21.230939 41407 CurlClient.cpp:187] Sending request for /kkjldvmlwl
+I0203 05:52:27.510139 41407 CurlClient.cpp:273] Got EOM for /kkjldvmlwl. Txn Time= 66279 ms
+
+2023-02-03 05:52:28,714 Server stderr
+2023-02-03 05:52:28,714 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
+
+2023-02-03 05:52:28,714 Copy goracle:/tmp/logs_server_4g7g6w8b to /tmp
+2023-02-03 05:52:28,933 Copy goracle:/tmp/certs_btqg6k2a to /tmp
+2023-02-03 05:52:29,153 Copy gard:/tmp/logs_sim_fyw9dm2e to /tmp
+2023-02-03 05:52:29,372 Copy gard:/tmp/logs_client_89kdzrty to /tmp
+2023-02-03 05:52:29,541 Interop duration: 0:01:06.528830
+2023-02-03 05:52:29,542 Client  duration: 0:01:06.322712
+2023-02-03 05:52:29,542 Difference: 0.31%
+2023-02-03 05:52:29,542 ssh gard 'stat -c %s /tmp/download_ckklpo7v/kkjldvmlwl'
+2023-02-03 05:52:29,742 ssh goracle 'stat -c %s /tmp/www_dfsqux3a/kkjldvmlwl'
+2023-02-03 05:52:29,942 Check of downloaded files succeeded.
+2023-02-03 05:52:29,942 Transferring 8589.93 MB took 66.323 s. Goodput: 1036.138 Mbps
+2023-02-03 05:52:29,943 ✓ Test successful

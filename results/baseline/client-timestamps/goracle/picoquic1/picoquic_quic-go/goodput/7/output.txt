@@ -1,0 +1,70 @@
+2023-02-03 01:35:47,358 
+2023-02-03 01:35:47,359 Copy /tmp/logs_server_ms0xnx1b to goracle:/tmp
+2023-02-03 01:35:47,579 Copy /tmp/www_lt3x3n6c to goracle:/tmp
+2023-02-03 01:35:47,799 Copy /tmp/certs__xhdc_nc to goracle:/tmp
+2023-02-03 01:35:48,019 Copy /tmp/logs_sim_n0069h2z to gard:/tmp
+2023-02-03 01:35:48,239 Copy /tmp/logs_client_hup6co6v to gard:/tmp
+2023-02-03 01:35:48,458 Copy /tmp/download_2ox95mzt to gard:/tmp
+2023-02-03 01:35:48,678 ssh goracle 'touch /tmp/www_lt3x3n6c/bcpsnshspb && shred -n 1 -s 8589934592 /tmp/www_lt3x3n6c/bcpsnshspb'
+2023-02-03 01:35:52,580 Generated random file: /tmp/www_lt3x3n6c/bcpsnshspb of size: 8589934592
+2023-02-03 01:35:52,581 Requests: https://server:4433/bcpsnshspb
+2023-02-03 01:35:52,581 Checking if file /tmp/picoquic-server/bin/activate exists
+2023-02-03 01:35:52,594 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 01:35:52,651 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-02-03 01:35:52,664 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 01:35:53,980 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_01-35-52_646662_unknown HTTP/1.1" 200 475
+2023-02-03 01:35:53,983 Checking if file /tmp/quic-go-client/bin/activate exists
+2023-02-03 01:35:53,993 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 01:35:54,040 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-02-03 01:35:54,048 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 01:35:55,476 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_01-35-54_035897_unknown HTTP/1.1" 200 471
+2023-02-03 01:35:55,478 Setting variables:
+{'implementation': 'picoquic', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_ms0xnx1b', 'www_dir': '/tmp/www_lt3x3n6c/', 'certs_dir': '/tmp/certs__xhdc_nc/', 'role': 'server'}
+on the host goracle
+2023-02-03 01:35:55,489 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 01:35:55,592 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 01:35:55,594 Setting variables:
+{'implementation': 'quic-go', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_hup6co6v', 'sim_log_dir': '/tmp/logs_sim_n0069h2z', 'download_dir': '/tmp/download_2ox95mzt/', 'role': 'client'}
+on the host gard
+2023-02-03 01:35:55,607 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 01:35:55,661 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 01:35:55,663 Starting server:
+ ssh goracle 'cd picoquic; . /tmp/picoquic-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_ms0xnx1b/keys.log  LOGS=/tmp/logs_server_ms0xnx1b TESTCASE=goodput WWW=/tmp/www_lt3x3n6c/ CERTS=/tmp/certs__xhdc_nc/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-02-03 01:35:57,669 Starting client:
+ ssh gard 'cd quic-go; . /tmp/quic-go-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_hup6co6v/keys.log  LOGS=/tmp/logs_client_hup6co6v TESTCASE=goodput DOWNLOADS=/tmp/download_2ox95mzt/ REQUESTS="https://server:4433/bcpsnshspb" ./run-client.sh'
+
+2023-02-03 01:37:02,046 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-02-03 01:37:02,060 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 01:37:02,162 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 01:37:02,163 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-02-03 01:37:02,176 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 01:37:02,231 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 01:37:02,233 Client stdout
+2023-02-03 01:37:02,233 client exited with code 0
+
+2023-02-03 01:37:02,233 Client stderr
+2023-02-03 01:37:02,233 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
+
+2023-02-03 01:37:02,254 Server stderr
+2023-02-03 01:37:02,254 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
++ [[ goodput != \g\o\o\d\p\u\t ]]
++ ./picoquicdemo -c /tmp/certs__xhdc_nc//cert.pem -k /tmp/certs__xhdc_nc//priv.key -p 4433 -a 10.0.0.2 -w /tmp/www_lt3x3n6c/ -G cubic -n server
+No token file present. Will create one as <demo_token_store.bin>.
+
+2023-02-03 01:37:02,254 Copy goracle:/tmp/logs_server_ms0xnx1b to /tmp
+2023-02-03 01:37:02,474 Copy goracle:/tmp/certs__xhdc_nc to /tmp
+2023-02-03 01:37:02,694 Copy gard:/tmp/logs_sim_n0069h2z to /tmp
+2023-02-03 01:37:02,863 Copy gard:/tmp/logs_client_hup6co6v to /tmp
+2023-02-03 01:37:03,083 Interop duration: 0:01:03.370310
+2023-02-03 01:37:03,084 Client  duration: 0:01:03.165359
+2023-02-03 01:37:03,084 Difference: 0.32%
+2023-02-03 01:37:03,084 ssh gard 'stat -c %s /tmp/download_2ox95mzt/bcpsnshspb'
+2023-02-03 01:37:03,274 ssh goracle 'stat -c %s /tmp/www_lt3x3n6c/bcpsnshspb'
+2023-02-03 01:37:03,474 Check of downloaded files succeeded.
+2023-02-03 01:37:03,474 Transferring 8589.93 MB took 63.165 s. Goodput: 1087.930 Mbps
+2023-02-03 01:37:03,475 ✓ Test successful

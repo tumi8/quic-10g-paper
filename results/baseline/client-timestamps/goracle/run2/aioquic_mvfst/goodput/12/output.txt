@@ -1,0 +1,74 @@
+2023-01-24 00:45:24,329 
+2023-01-24 00:45:24,330 Copy /tmp/logs_server_h1uoy18y to goracle:/tmp
+2023-01-24 00:45:24,549 Copy /tmp/www_98232jov to goracle:/tmp
+2023-01-24 00:45:24,819 Copy /tmp/certs_3kfewnuk to goracle:/tmp
+2023-01-24 00:45:25,089 Copy /tmp/logs_sim_4y0jajq6 to gard:/tmp
+2023-01-24 00:45:25,309 Copy /tmp/logs_client_sueew6au to gard:/tmp
+2023-01-24 00:45:25,529 Copy /tmp/download_gzaknoar to gard:/tmp
+2023-01-24 00:45:25,799 Limit filesize for goodput to 209715200
+2023-01-24 00:45:25,799 ssh goracle 'touch /tmp/www_98232jov/hebedbwibi && shred -n 1 -s 209715200 /tmp/www_98232jov/hebedbwibi'
+2023-01-24 00:45:26,115 Generated random file: /tmp/www_98232jov/hebedbwibi of size: 209715200
+2023-01-24 00:45:26,116 Requests: https://server:4433/hebedbwibi
+2023-01-24 00:45:26,116 Checking if file /tmp/aioquic-server/bin/activate exists
+2023-01-24 00:45:26,129 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 00:45:26,188 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-24 00:45:26,202 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 00:45:27,206 http://172.16.128.1:5000 "GET /commands/await/2023-01-24_00-45-26_183692_unknown HTTP/1.1" 200 474
+2023-01-24 00:45:27,208 Checking if file /tmp/mvfst-client/bin/activate exists
+2023-01-24 00:45:27,218 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 00:45:27,275 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-24 00:45:27,287 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 00:45:28,289 http://172.16.128.1:5000 "GET /commands/await/2023-01-24_00-45-27_270758_unknown HTTP/1.1" 200 469
+2023-01-24 00:45:28,291 Setting variables:
+{'implementation': 'aioquic', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_h1uoy18y', 'www_dir': '/tmp/www_98232jov/', 'certs_dir': '/tmp/certs_3kfewnuk/', 'role': 'server'}
+on the host goracle
+2023-01-24 00:45:28,300 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 00:45:28,401 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-24 00:45:28,403 Setting variables:
+{'implementation': 'mvfst', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_sueew6au', 'sim_log_dir': '/tmp/logs_sim_4y0jajq6', 'download_dir': '/tmp/download_gzaknoar/', 'role': 'client'}
+on the host gard
+2023-01-24 00:45:28,414 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 00:45:28,469 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-24 00:45:28,471 Starting server:
+ ssh goracle 'cd aioquic; . /tmp/aioquic-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_h1uoy18y/keys.log  LOGS=/tmp/logs_server_h1uoy18y TESTCASE=goodput WWW=/tmp/www_98232jov/ CERTS=/tmp/certs_3kfewnuk/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-01-24 00:45:30,477 Starting client:
+ ssh gard 'cd mvfst; . /tmp/mvfst-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_sueew6au/keys.log  LOGS=/tmp/logs_client_sueew6au TESTCASE=goodput DOWNLOADS=/tmp/download_gzaknoar/ REQUESTS="https://server:4433/hebedbwibi" ./run-client.sh'
+
+2023-01-24 00:45:57,247 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-01-24 00:45:57,261 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 00:45:57,359 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-24 00:45:57,361 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-01-24 00:45:57,373 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 00:45:57,430 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-24 00:45:57,432 Client stdout
+2023-01-24 00:45:57,432 requesting files '/hebedbwibi'
+
+2023-01-24 00:45:57,432 Client stderr
+2023-01-24 00:45:57,432 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
+I0124 00:45:30.711946 43767 HQClient.cpp:61] HQClient connecting to 10.0.0.2:4433
+I0124 00:45:30.717809 43767 CurlClient.cpp:187] Sending request for /hebedbwibi
+I0124 00:45:56.231647 43767 CurlClient.cpp:273] Got EOM for /hebedbwibi. Txn Time= 25513 ms
+
+2023-01-24 00:45:57,433 Server stderr
+2023-01-24 00:45:57,433 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
+2023-01-24 00:45:28,796 INFO server Listening on 10.0.0.2:4433
+2023-01-24 00:45:30,722 INFO quic [b70c28e666a51231] ALPN negotiated protocol h3
+2023-01-24 00:45:56,236 INFO quic [b70c28e666a51231] Connection close received (code 0x100, reason HTTP: No error)
+
+2023-01-24 00:45:57,433 Copy goracle:/tmp/logs_server_h1uoy18y to /tmp
+2023-01-24 00:45:57,652 Copy goracle:/tmp/certs_3kfewnuk to /tmp
+2023-01-24 00:45:57,872 Copy gard:/tmp/logs_sim_4y0jajq6 to /tmp
+2023-01-24 00:45:58,092 Copy gard:/tmp/logs_client_sueew6au to /tmp
+2023-01-24 00:45:58,312 Interop duration: 0:00:25.763816
+2023-01-24 00:45:58,313 Client  duration: 0:00:25.557399
+2023-01-24 00:45:58,313 Difference: 0.80%
+2023-01-24 00:45:58,313 ssh gard 'stat -c %s /tmp/download_gzaknoar/hebedbwibi'
+2023-01-24 00:45:58,506 ssh goracle 'stat -c %s /tmp/www_98232jov/hebedbwibi'
+2023-01-24 00:45:58,658 Check of downloaded files succeeded.
+2023-01-24 00:45:58,658 Transferring 209.72 MB took 25.557 s. Goodput: 65.645 Mbps
+2023-01-24 00:45:58,659 ✓ Test successful

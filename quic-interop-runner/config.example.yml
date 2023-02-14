@@ -1,0 +1,9 @@
+testbed: testbed/testbed_uniswap-solana.json
+server: lsquic
+client: lsquic
+test: goodput
+implementation_directory: ./out
+client_prerunscript: pre-post-scripts/start-pidstat.sh,pre-post-scripts/start-perf.sh
+client_postrunscript: pre-post-scripts/stop-pidstat.sh,pre-post-scripts/stop-perf.sh
+server_prerunscript: pre-post-scripts/start-pidstat.sh,pre-post-scripts/start-perf.sh
+server_postrunscript: pre-post-scripts/stop-pidstat.sh,pre-post-scripts/stop-perf.sh

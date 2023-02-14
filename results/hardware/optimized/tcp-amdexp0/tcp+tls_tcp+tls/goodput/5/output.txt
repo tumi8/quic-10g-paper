@@ -1,0 +1,154 @@
+2023-01-28 12:31:31,416 
+2023-01-28 12:31:31,417 Copy /tmp/logs_server_bhaf0cx7 to amdexp0:/tmp
+2023-01-28 12:31:31,686 Copy /tmp/www_2uw6iwlv to amdexp0:/tmp
+2023-01-28 12:31:31,956 Copy /tmp/certs_sbmy_lm8 to amdexp0:/tmp
+2023-01-28 12:31:32,227 Copy /tmp/logs_sim_ce9u148q to amdexp1:/tmp
+2023-01-28 12:31:32,497 Copy /tmp/logs_client_ausybhur to amdexp1:/tmp
+2023-01-28 12:31:32,767 Copy /tmp/download_u693pcx0 to amdexp1:/tmp
+2023-01-28 12:31:32,988 ssh amdexp0 'touch /tmp/www_2uw6iwlv/zkudtqcvvo && shred -n 1 -s 8589934592 /tmp/www_2uw6iwlv/zkudtqcvvo'
+2023-01-28 12:31:38,514 Generated random file: /tmp/www_2uw6iwlv/zkudtqcvvo of size: 8589934592
+2023-01-28 12:31:38,514 Requests: https://server:4433/zkudtqcvvo
+2023-01-28 12:31:38,515 Checking if file /tmp/tcp+tls-server/bin/activate exists
+2023-01-28 12:31:38,528 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:38,580 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp0 HTTP/1.1" 200 44
+2023-01-28 12:31:38,595 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:40,034 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-31-38_576765_unknown HTTP/1.1" 200 474
+2023-01-28 12:31:40,036 Checking if file /tmp/tcp+tls-client/bin/activate exists
+2023-01-28 12:31:40,048 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:40,099 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp1 HTTP/1.1" 200 44
+2023-01-28 12:31:40,113 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:41,645 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-31-40_094637_unknown HTTP/1.1" 200 474
+2023-01-28 12:31:41,647 Setting variables:
+{'implementation': 'tcp+tls', 'interface': 'enp99s0f0', 'hostname': 'amdexp0', 'log_dir': '/tmp/logs_server_bhaf0cx7', 'www_dir': '/tmp/www_2uw6iwlv/', 'certs_dir': '/tmp/certs_sbmy_lm8/', 'role': 'server', 'rmem_value': 6815744}
+on the host amdexp0
+2023-01-28 12:31:41,657 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:41,760 http://172.16.128.1:5000 "POST /allocations/set_variables/amdexp0 HTTP/1.1" 200 0
+2023-01-28 12:31:41,762 Setting variables:
+{'implementation': 'tcp+tls', 'interface': 'enp99s0f0', 'hostname': 'amdexp1', 'log_dir': '/tmp/logs_client_ausybhur', 'sim_log_dir': '/tmp/logs_sim_ce9u148q', 'download_dir': '/tmp/download_u693pcx0/', 'role': 'client', 'rmem_value': 6815744}
+on the host amdexp1
+2023-01-28 12:31:41,776 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:41,832 http://172.16.128.1:5000 "POST /allocations/set_variables/amdexp1 HTTP/1.1" 200 0
+2023-01-28 12:31:41,833 Run pre-post-scripts/start-pidstat.sh on amdexp0
+2023-01-28 12:31:41,846 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:41,900 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp0 HTTP/1.1" 200 44
+2023-01-28 12:31:41,913 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:44,441 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-31-41_896056_unknown HTTP/1.1" 200 1553
+2023-01-28 12:31:44,444 Run pre-post-scripts/run-ethtool.sh on amdexp0
+2023-01-28 12:31:44,454 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:44,501 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp0 HTTP/1.1" 200 44
+2023-01-28 12:31:44,513 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:46,854 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-31-44_497118_unknown HTTP/1.1" 200 1239
+2023-01-28 12:31:46,856 Run pre-post-scripts/run-netstat.sh on amdexp0
+2023-01-28 12:31:46,868 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:46,920 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp0 HTTP/1.1" 200 44
+2023-01-28 12:31:46,932 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:49,192 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-31-46_915756_unknown HTTP/1.1" 200 1527
+2023-01-28 12:31:49,194 Run pre-post-scripts/set-rcvbuf.sh on amdexp0
+2023-01-28 12:31:49,205 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:49,293 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp0 HTTP/1.1" 200 44
+2023-01-28 12:31:49,306 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:51,333 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-31-49_287368_unknown HTTP/1.1" 200 618
+2023-01-28 12:31:51,335 Run pre-post-scripts/default-nic-offload.sh on amdexp0
+2023-01-28 12:31:51,345 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:51,407 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp0 HTTP/1.1" 200 44
+2023-01-28 12:31:51,420 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:53,223 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-31-51_402362_unknown HTTP/1.1" 200 1023
+2023-01-28 12:31:53,225 Run pre-post-scripts/start-pidstat.sh on amdexp1
+2023-01-28 12:31:53,234 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:53,288 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp1 HTTP/1.1" 200 44
+2023-01-28 12:31:53,302 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:56,392 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-31-53_283269_unknown HTTP/1.1" 200 1553
+2023-01-28 12:31:56,393 Run pre-post-scripts/run-ethtool.sh on amdexp1
+2023-01-28 12:31:56,404 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:56,455 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp1 HTTP/1.1" 200 44
+2023-01-28 12:31:56,468 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:58,915 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-31-56_451013_unknown HTTP/1.1" 200 1239
+2023-01-28 12:31:58,917 Run pre-post-scripts/run-netstat.sh on amdexp1
+2023-01-28 12:31:58,927 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:31:58,980 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp1 HTTP/1.1" 200 44
+2023-01-28 12:31:58,995 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:01,122 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-31-58_975983_unknown HTTP/1.1" 200 1527
+2023-01-28 12:32:01,123 Run pre-post-scripts/set-rcvbuf.sh on amdexp1
+2023-01-28 12:32:01,135 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:01,186 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp1 HTTP/1.1" 200 44
+2023-01-28 12:32:01,200 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:03,106 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-32-01_181660_unknown HTTP/1.1" 200 618
+2023-01-28 12:32:03,108 Run pre-post-scripts/default-nic-offload.sh on amdexp1
+2023-01-28 12:32:03,118 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:03,173 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp1 HTTP/1.1" 200 44
+2023-01-28 12:32:03,185 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:04,993 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-32-03_168252_unknown HTTP/1.1" 200 1023
+2023-01-28 12:32:04,994 Starting server:
+ ssh amdexp0 'cd tcp+tls; . /tmp/tcp+tls-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_bhaf0cx7/keys.log  LOGS=/tmp/logs_server_bhaf0cx7 TESTCASE=goodput WWW=/tmp/www_2uw6iwlv/ CERTS=/tmp/certs_sbmy_lm8/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-01-28 12:32:06,999 Starting client:
+ ssh amdexp1 'cd tcp+tls; . /tmp/tcp+tls-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_ausybhur/keys.log  LOGS=/tmp/logs_client_ausybhur TESTCASE=goodput DOWNLOADS=/tmp/download_u693pcx0/ REQUESTS="https://server:4433/zkudtqcvvo" ./run-client.sh'
+
+2023-01-28 12:32:22,684 Run pre-post-scripts/stop-pidstat.sh on amdexp0
+2023-01-28 12:32:22,693 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:22,792 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp0 HTTP/1.1" 200 44
+2023-01-28 12:32:22,804 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:24,376 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-32-22_787431_unknown HTTP/1.1" 200 528
+2023-01-28 12:32:24,377 Run pre-post-scripts/run-ethtool.sh on amdexp0
+2023-01-28 12:32:24,388 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:24,507 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp0 HTTP/1.1" 200 44
+2023-01-28 12:32:24,521 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:27,617 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-32-24_502478_unknown HTTP/1.1" 200 1239
+2023-01-28 12:32:27,618 Run pre-post-scripts/run-netstat.sh on amdexp0
+2023-01-28 12:32:27,627 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:27,722 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp0 HTTP/1.1" 200 44
+2023-01-28 12:32:27,733 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:30,614 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-32-27_717619_unknown HTTP/1.1" 200 1527
+2023-01-28 12:32:30,615 Run pre-post-scripts/set-buffers-default.sh on amdexp0
+2023-01-28 12:32:30,624 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:30,669 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp0 HTTP/1.1" 200 44
+2023-01-28 12:32:30,679 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:32,291 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-32-30_666768_unknown HTTP/1.1" 200 706
+2023-01-28 12:32:32,292 Run pre-post-scripts/stop-pidstat.sh on amdexp1
+2023-01-28 12:32:32,298 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:32,706 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp1 HTTP/1.1" 200 44
+2023-01-28 12:32:32,715 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:34,367 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-32-32_665082_unknown HTTP/1.1" 200 528
+2023-01-28 12:32:34,369 Run pre-post-scripts/run-ethtool.sh on amdexp1
+2023-01-28 12:32:34,381 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:34,434 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp1 HTTP/1.1" 200 44
+2023-01-28 12:32:34,446 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:37,163 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-32-34_429900_unknown HTTP/1.1" 200 1239
+2023-01-28 12:32:37,164 Run pre-post-scripts/run-netstat.sh on amdexp1
+2023-01-28 12:32:37,171 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:37,576 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp1 HTTP/1.1" 200 44
+2023-01-28 12:32:37,589 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:39,738 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-32-37_572926_unknown HTTP/1.1" 200 1527
+2023-01-28 12:32:39,739 Run pre-post-scripts/set-buffers-default.sh on amdexp1
+2023-01-28 12:32:39,745 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:39,806 http://172.16.128.1:5000 "POST /commands/launch?nodes=amdexp1 HTTP/1.1" 200 44
+2023-01-28 12:32:39,820 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:41,475 http://172.16.128.1:5000 "GET /commands/await/2023-01-28_12-32-39_802287_unknown HTTP/1.1" 200 706
+2023-01-28 12:32:42,482 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': '', 'rmem_value': ''}
+on the host amdexp0
+2023-01-28 12:32:42,492 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:42,631 http://172.16.128.1:5000 "POST /allocations/set_variables/amdexp0 HTTP/1.1" 200 0
+2023-01-28 12:32:42,633 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': '', 'rmem_value': ''}
+on the host amdexp1
+2023-01-28 12:32:42,643 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-28 12:32:42,698 http://172.16.128.1:5000 "POST /allocations/set_variables/amdexp1 HTTP/1.1" 200 0
+2023-01-28 12:32:42,700 Client stderr
+2023-01-28 12:32:42,700 Warning: Permanently added 'amdexp1,172.16.142.1' (ECDSA) to the list of known hosts.
+
+2023-01-28 12:32:42,746 Server stderr
+2023-01-28 12:32:42,747 Warning: Permanently added 'amdexp0,172.16.141.1' (ECDSA) to the list of known hosts.
+
+2023-01-28 12:32:42,747 Copy amdexp0:/tmp/logs_server_bhaf0cx7 to /tmp
+2023-01-28 12:32:42,966 Copy amdexp0:/tmp/certs_sbmy_lm8 to /tmp
+2023-01-28 12:32:43,186 Copy amdexp1:/tmp/logs_sim_ce9u148q to /tmp
+2023-01-28 12:32:43,455 Copy amdexp1:/tmp/logs_client_ausybhur to /tmp
+2023-01-28 12:32:43,774 Interop duration: 0:00:15.684027
+2023-01-28 12:32:43,775 Client  duration: 0:00:15.497699
+2023-01-28 12:32:43,775 Difference: 1.19%
+2023-01-28 12:32:43,775 ssh amdexp1 'stat -c %s /tmp/download_u693pcx0/zkudtqcvvo'
+2023-01-28 12:32:43,951 ssh amdexp0 'stat -c %s /tmp/www_2uw6iwlv/zkudtqcvvo'
+2023-01-28 12:32:44,123 Check of downloaded files succeeded.
+2023-01-28 12:32:44,124 Transferring 8589.93 MB took 15.498 s. Goodput: 4434.173 Mbps
+2023-01-28 12:32:44,124 ✓ Test successful

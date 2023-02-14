@@ -1,0 +1,74 @@
+2023-01-24 07:21:45,782 
+2023-01-24 07:21:45,783 Copy /tmp/logs_server_lgurxafs to goracle:/tmp
+2023-01-24 07:21:46,003 Copy /tmp/www_h2cxmenu to goracle:/tmp
+2023-01-24 07:21:46,222 Copy /tmp/certs_0_mtu0p8 to goracle:/tmp
+2023-01-24 07:21:46,443 Copy /tmp/logs_sim_cy4trh5l to gard:/tmp
+2023-01-24 07:21:46,662 Copy /tmp/logs_client_v9kqpofs to gard:/tmp
+2023-01-24 07:21:46,882 Copy /tmp/download_uxpw0tnv to gard:/tmp
+2023-01-24 07:21:47,102 ssh goracle 'touch /tmp/www_h2cxmenu/ygffmfbsev && shred -n 1 -s 8589934592 /tmp/www_h2cxmenu/ygffmfbsev'
+2023-01-24 07:21:51,025 Generated random file: /tmp/www_h2cxmenu/ygffmfbsev of size: 8589934592
+2023-01-24 07:21:51,025 Requests: https://server:4433/ygffmfbsev
+2023-01-24 07:21:51,026 Checking if file /tmp/quiche-server/bin/activate exists
+2023-01-24 07:21:51,038 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:21:51,097 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-24 07:21:51,111 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:21:52,073 http://172.16.128.1:5000 "GET /commands/await/2023-01-24_07-21-51_091332_unknown HTTP/1.1" 200 473
+2023-01-24 07:21:52,075 Checking if file /tmp/mvfst-client/bin/activate exists
+2023-01-24 07:21:52,084 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:21:52,135 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-24 07:21:52,146 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:21:53,112 http://172.16.128.1:5000 "GET /commands/await/2023-01-24_07-21-52_131358_unknown HTTP/1.1" 200 469
+2023-01-24 07:21:53,114 Setting variables:
+{'implementation': 'quiche', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_lgurxafs', 'www_dir': '/tmp/www_h2cxmenu/', 'certs_dir': '/tmp/certs_0_mtu0p8/', 'role': 'server'}
+on the host goracle
+2023-01-24 07:21:53,125 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:21:53,229 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-24 07:21:53,231 Setting variables:
+{'implementation': 'mvfst', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_v9kqpofs', 'sim_log_dir': '/tmp/logs_sim_cy4trh5l', 'download_dir': '/tmp/download_uxpw0tnv/', 'role': 'client'}
+on the host gard
+2023-01-24 07:21:53,244 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:21:53,298 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-24 07:21:53,300 Starting server:
+ ssh goracle 'cd quiche; . /tmp/quiche-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_lgurxafs/keys.log  LOGS=/tmp/logs_server_lgurxafs TESTCASE=goodput WWW=/tmp/www_h2cxmenu/ CERTS=/tmp/certs_0_mtu0p8/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-01-24 07:21:55,305 Starting client:
+ ssh gard 'cd mvfst; . /tmp/mvfst-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_v9kqpofs/keys.log  LOGS=/tmp/logs_client_v9kqpofs TESTCASE=goodput DOWNLOADS=/tmp/download_uxpw0tnv/ REQUESTS="https://server:4433/ygffmfbsev" ./run-client.sh'
+
+2023-01-24 07:23:02,921 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-01-24 07:23:02,933 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:23:03,036 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-24 07:23:03,037 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-01-24 07:23:03,051 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 07:23:03,106 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-24 07:23:03,108 Client stdout
+2023-01-24 07:23:03,108 requesting files '/ygffmfbsev'
+
+2023-01-24 07:23:03,108 Client stderr
+2023-01-24 07:23:03,108 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
+I0124 07:21:55.547487 96084 HQClient.cpp:61] HQClient connecting to 10.0.0.2:4433
+I0124 07:21:55.553105 96084 CurlClient.cpp:187] Sending request for /ygffmfbsev
+I0124 07:23:01.909844 96084 CurlClient.cpp:273] Got EOM for /ygffmfbsev. Txn Time= 66356 ms
+
+2023-01-24 07:23:03,134 Server stderr
+2023-01-24 07:23:03,135 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
+Value not found
+Value not found
+Value not found
+Value not found
+
+2023-01-24 07:23:03,135 Copy goracle:/tmp/logs_server_lgurxafs to /tmp
+2023-01-24 07:23:03,354 Copy goracle:/tmp/certs_0_mtu0p8 to /tmp
+2023-01-24 07:23:03,574 Copy gard:/tmp/logs_sim_cy4trh5l to /tmp
+2023-01-24 07:23:03,793 Copy gard:/tmp/logs_client_v9kqpofs to /tmp
+2023-01-24 07:23:04,013 Interop duration: 0:01:06.608398
+2023-01-24 07:23:04,014 Client  duration: 0:01:06.398180
+2023-01-24 07:23:04,014 Difference: 0.32%
+2023-01-24 07:23:04,014 ssh gard 'stat -c %s /tmp/download_uxpw0tnv/ygffmfbsev'
+2023-01-24 07:23:04,206 ssh goracle 'stat -c %s /tmp/www_h2cxmenu/ygffmfbsev'
+2023-01-24 07:23:04,402 Check of downloaded files succeeded.
+2023-01-24 07:23:04,403 Transferring 8589.93 MB took 66.398 s. Goodput: 1034.960 Mbps
+2023-01-24 07:23:04,403 ✓ Test successful

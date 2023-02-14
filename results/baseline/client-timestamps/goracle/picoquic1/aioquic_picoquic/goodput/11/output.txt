@@ -1,0 +1,140 @@
+2023-02-03 03:45:32,383 
+2023-02-03 03:45:32,384 Copy /tmp/logs_server_3al71d95 to goracle:/tmp
+2023-02-03 03:45:32,652 Copy /tmp/www_bvrfj8p3 to goracle:/tmp
+2023-02-03 03:45:32,922 Copy /tmp/certs_lijwxau6 to goracle:/tmp
+2023-02-03 03:45:33,193 Copy /tmp/logs_sim_m2e6djy5 to gard:/tmp
+2023-02-03 03:45:33,413 Copy /tmp/logs_client_84qdw27_ to gard:/tmp
+2023-02-03 03:45:33,632 Copy /tmp/download_rsh1lj0o to gard:/tmp
+2023-02-03 03:45:33,852 Limit filesize for goodput to 209715200
+2023-02-03 03:45:33,853 ssh goracle 'touch /tmp/www_bvrfj8p3/yszhfwmuvv && shred -n 1 -s 209715200 /tmp/www_bvrfj8p3/yszhfwmuvv'
+2023-02-03 03:45:34,129 Generated random file: /tmp/www_bvrfj8p3/yszhfwmuvv of size: 209715200
+2023-02-03 03:45:34,130 Requests: https://server:4433/yszhfwmuvv
+2023-02-03 03:45:34,130 Checking if file /tmp/aioquic-server/bin/activate exists
+2023-02-03 03:45:34,141 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 03:45:34,203 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-02-03 03:45:34,215 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 03:45:35,579 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_03-45-34_198207_unknown HTTP/1.1" 200 474
+2023-02-03 03:45:35,580 Checking if file /tmp/picoquic-client/bin/activate exists
+2023-02-03 03:45:35,590 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 03:45:35,652 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-02-03 03:45:35,666 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 03:45:37,120 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_03-45-35_646586_unknown HTTP/1.1" 200 472
+2023-02-03 03:45:37,122 Setting variables:
+{'implementation': 'aioquic', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_3al71d95', 'www_dir': '/tmp/www_bvrfj8p3/', 'certs_dir': '/tmp/certs_lijwxau6/', 'role': 'server'}
+on the host goracle
+2023-02-03 03:45:37,135 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 03:45:37,239 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 03:45:37,241 Setting variables:
+{'implementation': 'picoquic', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_84qdw27_', 'sim_log_dir': '/tmp/logs_sim_m2e6djy5', 'download_dir': '/tmp/download_rsh1lj0o/', 'role': 'client'}
+on the host gard
+2023-02-03 03:45:37,253 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 03:45:37,308 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 03:45:37,310 Starting server:
+ ssh goracle 'cd aioquic; . /tmp/aioquic-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_3al71d95/keys.log  LOGS=/tmp/logs_server_3al71d95 TESTCASE=goodput WWW=/tmp/www_bvrfj8p3/ CERTS=/tmp/certs_lijwxau6/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-02-03 03:45:39,316 Starting client:
+ ssh gard 'cd picoquic; . /tmp/picoquic-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_84qdw27_/keys.log  LOGS=/tmp/logs_client_84qdw27_ TESTCASE=goodput DOWNLOADS=/tmp/download_rsh1lj0o/ REQUESTS="https://server:4433/yszhfwmuvv" ./run-client.sh'
+
+2023-02-03 03:46:11,781 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-02-03 03:46:11,794 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 03:46:11,853 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 03:46:11,855 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-02-03 03:46:11,866 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 03:46:11,918 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 03:46:11,920 Client stdout
+2023-02-03 03:46:11,920 Starting Picoquic (v1.1.0.1) connection to server = server, port = 4433
+Set ALPN to h3 based on stored ticket
+Set version to 0x00000001 based on stored ticket
+Testing scenario: <yszhfwmuvv>
+Max stream id bidir remote before start = 0 (0)
+Starting client connection. Version = 1, I-CID: 602ca48f86081491
+Max stream id bidir remote after start = 2044 (512)
+Max stream id bidir remote after 0rtt = 2044 (512)
+Opening stream 0 to GET /yszhfwmuvv
+Waiting for packets.
+Client port (AF=2): 46493.
+Negotiated ALPN: h3
+Almost ready!
+
+Connection established. Version = 1, I-CID: 602ca48f86081491, verified: 1
+Stream 0 ended after 209715200 bytes
+All done, Closing the connection.
+Received a request to close the connection.
+Out of 1 zero RTT packets, 0 were acked by the server.
+Quic Bit was NOT greased by the client.
+Quic Bit was NOT greased by the server.
+ECN was not received.
+ECN was not acknowledged.
+Received 209868943 bytes in 31.236478 seconds, 53.749707 Mbps.
+max_data_local: 764411904
+max_stream_data_local: 509607936
+max_data_remote: 1048576
+max_stream_data_remote: 1048576
+ack_delay_remote: 1000 ... 1000
+max_ack_gap_remote: 2
+ack_delay_local: 25000 ... 25000
+max_ack_gap_local: 2
+max_mtu_sent: 1252
+max_mtu_received: 1280
+Received ticket from server (h3):
+ticket time = 1675383645916, kx = 17, suite = 1301, 120 ticket, 32 secret.
+lifetime = 100000, age_add = 544158a1, 0 nonce, 99 ticket, 8 extensions.
+ticket extensions: 42(ED: ffffffff),
+Client exit with code = 0
+
+2023-02-03 03:46:11,920 Client stderr
+2023-02-03 03:46:11,920 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
++ [[ goodput != \g\o\o\d\p\u\t ]]
+++ echo https://server:4433/yszhfwmuvv
+++ grep ://
+++ sed '-es,^\(.*://\).*,\1,g'
++ PROTO=https://
+++ echo server:4433/yszhfwmuvv
++ URL=server:4433/yszhfwmuvv
+++ echo server:4433/yszhfwmuvv
+++ grep @
+++ cut -d@ -f1
++ USER=
+++ echo server:4433/yszhfwmuvv
+++ cut -d/ -f1
++ HOSTPORT=server:4433
+++ echo server:4433
+++ sed -e 's,:.*,,g'
++ HOST=server
+++ echo server:4433
+++ sed -e 's,^.*:,:,g' -e 's,.*:\([0-9]*\).*,\1,g' -e 's,[^0-9],,g'
++ PORT=4433
+++ echo server:4433/yszhfwmuvv
+++ grep /
+++ cut -d/ -f2-
++ FILES=yszhfwmuvv
+++ date +%s%N
++ start=1675392339533176613
++ ./picoquicdemo -n server -o /tmp/download_rsh1lj0o/ server 4433 yszhfwmuvv
++ ret=0
+++ date +%s%N
++ end=1675392370774237819
++ echo '{"start":' 1675392339533176613, '"end":' '1675392370774237819}'
+
+2023-02-03 03:46:12,033 Server stderr
+2023-02-03 03:46:12,033 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
+2023-02-03 03:45:37,637 INFO server Listening on 10.0.0.2:4433
+2023-02-03 03:45:39,539 INFO quic [602ca48f86081491] ALPN negotiated protocol h3
+2023-02-03 03:46:10,619 INFO quic [602ca48f86081491] Connection close received (code 0x0, reason )
+
+2023-02-03 03:46:12,033 Copy goracle:/tmp/logs_server_3al71d95 to /tmp
+2023-02-03 03:46:12,203 Copy goracle:/tmp/certs_lijwxau6 to /tmp
+2023-02-03 03:46:12,372 Copy gard:/tmp/logs_sim_m2e6djy5 to /tmp
+2023-02-03 03:46:12,542 Copy gard:/tmp/logs_client_84qdw27_ to /tmp
+2023-02-03 03:46:12,712 Interop duration: 0:00:31.458512
+2023-02-03 03:46:12,712 Client  duration: 0:00:31.241061
+2023-02-03 03:46:12,713 Difference: 0.69%
+2023-02-03 03:46:12,713 ssh gard 'stat -c %s /tmp/download_rsh1lj0o/yszhfwmuvv'
+2023-02-03 03:46:12,866 ssh goracle 'stat -c %s /tmp/www_bvrfj8p3/yszhfwmuvv'
+2023-02-03 03:46:13,018 Check of downloaded files succeeded.
+2023-02-03 03:46:13,019 Transferring 209.72 MB took 31.241 s. Goodput: 53.702 Mbps
+2023-02-03 03:46:13,019 ✓ Test successful

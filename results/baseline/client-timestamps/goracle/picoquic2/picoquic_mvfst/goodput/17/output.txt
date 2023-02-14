@@ -1,0 +1,98 @@
+2023-02-03 14:43:17,456 
+2023-02-03 14:43:17,457 Copy /tmp/logs_server_j6l99zo7 to goracle:/tmp
+2023-02-03 14:43:17,726 Copy /tmp/www_3inuspgu to goracle:/tmp
+2023-02-03 14:43:17,996 Copy /tmp/certs_eqjmu7y8 to goracle:/tmp
+2023-02-03 14:43:18,267 Copy /tmp/logs_sim_p6b1pnf4 to gard:/tmp
+2023-02-03 14:43:18,537 Copy /tmp/logs_client_7eies8my to gard:/tmp
+2023-02-03 14:43:18,807 Copy /tmp/download_4y8m6h2t to gard:/tmp
+2023-02-03 14:43:19,077 ssh goracle 'touch /tmp/www_3inuspgu/rlfqujgjzl && shred -n 1 -s 524288000 /tmp/www_3inuspgu/rlfqujgjzl'
+2023-02-03 14:43:19,524 Generated random file: /tmp/www_3inuspgu/rlfqujgjzl of size: 524288000
+2023-02-03 14:43:19,525 Requests: https://server:4433/rlfqujgjzl
+2023-02-03 14:43:19,525 Checking if file /tmp/picoquic-server/bin/activate exists
+2023-02-03 14:43:19,539 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:43:19,598 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-02-03 14:43:19,610 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:43:21,011 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_14-43-19_593476_unknown HTTP/1.1" 200 475
+2023-02-03 14:43:21,013 Checking if file /tmp/mvfst-client/bin/activate exists
+2023-02-03 14:43:21,023 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:43:21,077 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-02-03 14:43:21,089 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:43:22,574 http://172.16.128.1:5000 "GET /commands/await/2023-02-03_14-43-21_073461_unknown HTTP/1.1" 200 469
+2023-02-03 14:43:22,577 Setting variables:
+{'implementation': 'picoquic', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_j6l99zo7', 'www_dir': '/tmp/www_3inuspgu/', 'certs_dir': '/tmp/certs_eqjmu7y8/', 'role': 'server'}
+on the host goracle
+2023-02-03 14:43:22,589 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:43:22,691 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 14:43:22,693 Setting variables:
+{'implementation': 'mvfst', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_7eies8my', 'sim_log_dir': '/tmp/logs_sim_p6b1pnf4', 'download_dir': '/tmp/download_4y8m6h2t/', 'role': 'client'}
+on the host gard
+2023-02-03 14:43:22,705 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:43:22,759 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 14:43:22,760 Starting server:
+ ssh goracle 'cd picoquic; . /tmp/picoquic-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_j6l99zo7/keys.log  LOGS=/tmp/logs_server_j6l99zo7 TESTCASE=goodput WWW=/tmp/www_3inuspgu/ CERTS=/tmp/certs_eqjmu7y8/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-02-03 14:43:24,766 Starting client:
+ ssh gard 'cd mvfst; . /tmp/mvfst-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_7eies8my/keys.log  LOGS=/tmp/logs_client_7eies8my TESTCASE=goodput DOWNLOADS=/tmp/download_4y8m6h2t/ REQUESTS="https://server:4433/rlfqujgjzl" ./run-client.sh'
+
+2023-02-03 14:44:46,745 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-02-03 14:44:46,757 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:44:46,914 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-02-03 14:44:46,916 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-02-03 14:44:46,927 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-02-03 14:44:46,981 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-02-03 14:44:46,983 Client stdout
+2023-02-03 14:44:46,983 requesting files '/rlfqujgjzl'
+
+2023-02-03 14:44:46,983 Client stderr
+2023-02-03 14:44:46,983 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
++ [[ goodput == \g\o\o\d\p\u\t ]]
++ '[' -z x ']'
+++ echo https://server:4433/rlfqujgjzl
+++ tr ' ' '\n'
+++ awk -F / '{ print "/" $4 }'
+++ paste -sd,
++ INVOCATIONS=/rlfqujgjzl
++ REQS=($REQUESTS)
++ REQ=https://server:4433/rlfqujgjzl
+++ echo https://server:4433/rlfqujgjzl
+++ cut -d/ -f3
+++ cut -d: -f1
++ SERVER=server
+++ echo https://server:4433/rlfqujgjzl
+++ cut -d: -f3
+++ cut -d/ -f1
++ PORT=4433
+++ date +%s%N
++ start=1675431804923865255
++ for INVOCATION in ${INVOCATIONS}
++ echo 'requesting files '\''/rlfqujgjzl'\'''
++ ./hq --mode=client --host=server --port=4433 --quic-version=1 --path=/rlfqujgjzl --outdir=/tmp/download_4y8m6h2t/ --logdir=/tmp/logs_client_7eies8my --qlogger_path=
+I0203 14:43:24.956982 95270 HQClient.cpp:61] HQClient connecting to 10.0.0.2:4433
+I0203 14:43:24.961923 95270 CurlClient.cpp:187] Sending request for /rlfqujgjzl
+I0203 14:44:45.731566 95270 CurlClient.cpp:273] Got EOM for /rlfqujgjzl. Txn Time= 80769 ms
+++ date +%s%N
++ end=1675431885734559833
++ echo '{"start":' 1675431804923865255, '"end":' '1675431885734559833}'
+
+2023-02-03 14:44:46,984 Server stderr
+2023-02-03 14:44:46,984 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
++ [[ goodput != \g\o\o\d\p\u\t ]]
++ ./picoquicdemo -c /tmp/certs_eqjmu7y8//cert.pem -k /tmp/certs_eqjmu7y8//priv.key -p 4433 -a 10.0.0.2 -w /tmp/www_3inuspgu/ -n server
+No token file present. Will create one as <demo_token_store.bin>.
+
+2023-02-03 14:44:46,985 Copy goracle:/tmp/logs_server_j6l99zo7 to /tmp
+2023-02-03 14:44:47,204 Copy goracle:/tmp/certs_eqjmu7y8 to /tmp
+2023-02-03 14:44:47,424 Copy gard:/tmp/logs_sim_p6b1pnf4 to /tmp
+2023-02-03 14:44:47,643 Copy gard:/tmp/logs_client_7eies8my to /tmp
+2023-02-03 14:44:47,863 Interop duration: 0:01:20.972044
+2023-02-03 14:44:47,864 Client  duration: 0:01:20.810695
+2023-02-03 14:44:47,864 Difference: 0.20%
+2023-02-03 14:44:47,865 ssh gard 'stat -c %s /tmp/download_4y8m6h2t/rlfqujgjzl'
+2023-02-03 14:44:48,058 ssh goracle 'stat -c %s /tmp/www_3inuspgu/rlfqujgjzl'
+2023-02-03 14:44:48,254 Check of downloaded files succeeded.
+2023-02-03 14:44:48,255 Transferring 524.29 MB took 80.811 s. Goodput: 51.903 Mbps
+2023-02-03 14:44:48,255 ✓ Test successful

@@ -1,0 +1,82 @@
+2023-01-24 01:28:08,141 
+2023-01-24 01:28:08,142 Copy /tmp/logs_server_sczw7pj_ to goracle:/tmp
+2023-01-24 01:28:08,412 Copy /tmp/www_fuzdcfyr to goracle:/tmp
+2023-01-24 01:28:08,632 Copy /tmp/certs_9zaak26r to goracle:/tmp
+2023-01-24 01:28:08,852 Copy /tmp/logs_sim_uhnxjmia to gard:/tmp
+2023-01-24 01:28:09,122 Copy /tmp/logs_client_277u11ul to gard:/tmp
+2023-01-24 01:28:09,342 Copy /tmp/download_gpj92u_u to gard:/tmp
+2023-01-24 01:28:09,612 Limit filesize for goodput to 209715200
+2023-01-24 01:28:09,612 ssh goracle 'touch /tmp/www_fuzdcfyr/lzngxkzyjd && shred -n 1 -s 209715200 /tmp/www_fuzdcfyr/lzngxkzyjd'
+2023-01-24 01:28:09,935 Generated random file: /tmp/www_fuzdcfyr/lzngxkzyjd of size: 209715200
+2023-01-24 01:28:09,936 Requests: https://server:4433/lzngxkzyjd
+2023-01-24 01:28:09,936 Checking if file /tmp/aioquic-server/bin/activate exists
+2023-01-24 01:28:09,948 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 01:28:09,999 http://172.16.128.1:5000 "POST /commands/launch?nodes=goracle HTTP/1.1" 200 44
+2023-01-24 01:28:10,010 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 01:28:10,960 http://172.16.128.1:5000 "GET /commands/await/2023-01-24_01-28-09_995016_unknown HTTP/1.1" 200 474
+2023-01-24 01:28:10,962 Checking if file /tmp/lsquic-client/bin/activate exists
+2023-01-24 01:28:10,972 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 01:28:11,029 http://172.16.128.1:5000 "POST /commands/launch?nodes=gard HTTP/1.1" 200 44
+2023-01-24 01:28:11,041 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 01:28:12,021 http://172.16.128.1:5000 "GET /commands/await/2023-01-24_01-28-11_024444_unknown HTTP/1.1" 200 470
+2023-01-24 01:28:12,023 Setting variables:
+{'implementation': 'aioquic', 'interface': 'eno2np1', 'hostname': 'goracle', 'log_dir': '/tmp/logs_server_sczw7pj_', 'www_dir': '/tmp/www_fuzdcfyr/', 'certs_dir': '/tmp/certs_9zaak26r/', 'role': 'server'}
+on the host goracle
+2023-01-24 01:28:12,033 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 01:28:12,133 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-24 01:28:12,134 Setting variables:
+{'implementation': 'lsquic', 'interface': 'eno2np1', 'hostname': 'gard', 'log_dir': '/tmp/logs_client_277u11ul', 'sim_log_dir': '/tmp/logs_sim_uhnxjmia', 'download_dir': '/tmp/download_gpj92u_u/', 'role': 'client'}
+on the host gard
+2023-01-24 01:28:12,147 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 01:28:12,200 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-24 01:28:12,201 Starting server:
+ ssh goracle 'cd aioquic; . /tmp/aioquic-server/bin/activate; SSLKEYLOGFILE=/tmp/logs_server_sczw7pj_/keys.log  LOGS=/tmp/logs_server_sczw7pj_ TESTCASE=goodput WWW=/tmp/www_fuzdcfyr/ CERTS=/tmp/certs_9zaak26r/ IP=10.0.0.2 PORT=4433 SERVERNAME=server ./run-server.sh'
+
+2023-01-24 01:28:14,207 Starting client:
+ ssh gard 'cd lsquic; . /tmp/lsquic-client/bin/activate; SSLKEYLOGFILE=/tmp/logs_client_277u11ul/keys.log  LOGS=/tmp/logs_client_277u11ul TESTCASE=goodput DOWNLOADS=/tmp/download_gpj92u_u/ REQUESTS="https://server:4433/lzngxkzyjd" ./run-client.sh'
+
+2023-01-24 01:28:44,801 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'www_dir': '', 'certs_dir': '', 'role': ''}
+on the host goracle
+2023-01-24 01:28:44,814 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 01:28:44,927 http://172.16.128.1:5000 "POST /allocations/set_variables/goracle HTTP/1.1" 200 0
+2023-01-24 01:28:44,929 Setting variables:
+{'implementation': '', 'interface': '', 'hostname': '', 'log_dir': '', 'sim_log_dir': '', 'download_dir': '', 'role': ''}
+on the host gard
+2023-01-24 01:28:44,941 Starting new HTTP connection (1): 172.16.128.1:5000
+2023-01-24 01:28:44,995 http://172.16.128.1:5000 "POST /allocations/set_variables/gard HTTP/1.1" 200 0
+2023-01-24 01:28:44,997 Client stderr
+2023-01-24 01:28:44,997 Warning: Permanently added 'gard,172.16.151.1' (ECDSA) to the list of known hosts.
+Value not found
+Value not found
+Value not found
+Value not found
+Value not found
+Value not found
+Value not found
+Value not found
+Value not found
+Value not found
+01:28:16.496 [NOTICE] QL loss bits turned off because of -G.  If you want to turn it on, just override: -G dir -o ql_bits=2
+01:28:16.503 [NOTICE] downloading /lzngxkzyjd to /tmp/download_gpj92u_u//lzngxkzyjd
+
+2023-01-24 01:28:45,018 Server stderr
+2023-01-24 01:28:45,018 Warning: Permanently added 'goracle,172.16.150.1' (ECDSA) to the list of known hosts.
+2023-01-24 01:28:12,480 INFO server Listening on 10.0.0.2:4433
+2023-01-24 01:28:16,506 INFO quic [fafc39d4ccbb46107901ec30] ALPN negotiated protocol h3
+2023-01-24 01:28:43,789 INFO quic [fafc39d4ccbb46107901ec30] Connection close received (code 0x0, reason )
+
+2023-01-24 01:28:45,018 Copy goracle:/tmp/logs_server_sczw7pj_ to /tmp
+2023-01-24 01:28:45,238 Copy goracle:/tmp/certs_9zaak26r to /tmp
+2023-01-24 01:28:45,458 Copy gard:/tmp/logs_sim_uhnxjmia to /tmp
+2023-01-24 01:28:45,727 Copy gard:/tmp/logs_client_277u11ul to /tmp
+2023-01-24 01:28:45,948 Interop duration: 0:00:29.587573
+2023-01-24 01:28:45,948 Client  duration: 0:00:27.294999
+2023-01-24 01:28:45,948 Difference: 7.75%
+2023-01-24 01:28:45,949 ssh gard 'stat -c %s /tmp/download_gpj92u_u/lzngxkzyjd'
+2023-01-24 01:28:46,146 ssh goracle 'stat -c %s /tmp/www_fuzdcfyr/lzngxkzyjd'
+2023-01-24 01:28:46,338 Different filesize: 209715434.0 | 209715200.0
+2023-01-24 01:28:46,339 Different filesize tolerated (less than 1%
+2023-01-24 01:28:46,339 Check of downloaded files succeeded.
+2023-01-24 01:28:46,339 Transferring 209.72 MB took 27.295 s. Goodput: 61.466 Mbps
+2023-01-24 01:28:46,340 ✓ Test successful
